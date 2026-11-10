@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:01:46+00:00",
+  "generated_at": "2026-11-10T05:14:12+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1033,15 +1033,46 @@
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T05:01:48+00:00",
-    "rule_count": 227591,
+    "generated_at": "2026-11-10T05:14:14+00:00",
+    "rule_count": 223591,
+    "size_bytes": 740,
+    "shard_count": 4,
+    "largest_shard_bytes": 2500047,
+    "shards": [
+      {
+        "path": "rules/AdBlock-01.list",
+        "url": "https://749894867.github.io/adblock-center/rules/AdBlock-01.list",
+        "rule_count": 73015,
+        "size_bytes": 2500047
+      },
+      {
+        "path": "rules/AdBlock-02.list",
+        "url": "https://749894867.github.io/adblock-center/rules/AdBlock-02.list",
+        "rule_count": 72156,
+        "size_bytes": 2500034
+      },
+      {
+        "path": "rules/AdBlock-03.list",
+        "url": "https://749894867.github.io/adblock-center/rules/AdBlock-03.list",
+        "rule_count": 71471,
+        "size_bytes": 2500031
+      },
+      {
+        "path": "rules/AdBlock-04.list",
+        "url": "https://749894867.github.io/adblock-center/rules/AdBlock-04.list",
+        "rule_count": 6949,
+        "size_bytes": 231809
+      }
+    ],
+    "redundant_suffix_rules_removed": 3043,
+    "redundant_exact_domain_rules_removed": 957,
     "source_files_scanned": 74,
     "files_contributing_rules": 23,
     "rule_types": {
-      "DOMAIN-SUFFIX": 226238,
-      "DOMAIN": 960,
+      "DOMAIN-SUFFIX": 223195,
+      "URL-REGEX": 111,
       "DOMAIN-KEYWORD": 282,
-      "URL-REGEX": 111
+      "DOMAIN": 3
     },
     "source_rule_counts": {
       "anti-ad": 103068,
@@ -1050,6 +1081,6 @@
       "cats-team": 123170,
       "ddgksf2013-rewrite": 97
     },
-    "compatibility_note": "Conservative Surge-style rules only. QX script-response-body and jsonjq-response-body rewrites are not included."
+    "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   }
 }
