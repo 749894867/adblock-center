@@ -35,6 +35,13 @@ footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:v
 <p>独立模块每日从 Apple 官方企业网络文档同步 Apple Intelligence、Siri 与 Private Cloud Compute 主机，并保留少量兼容性补充域名。模块只负责分流，不配置 HTTPS MITM。默认策略组为「默认」，请确认客户端中存在同名策略组。</p><p><a href="https://support.apple.com/en-us/101555" target="_blank" rel="noopener">Apple 官方网络主机文档 ↗</a></p>
 <a href="downloads/Apple-Intelligence-Route.sgmodule">Apple Intelligence 独立规则地址 ↗</a>
 </div></section>
+<section><h2>Bilibili 专项净化</h2><div class="card">
+<p>主广告模块已集成 app2smile 的 Bilibili JSON 与 Protobuf 响应清理，覆盖开屏、推荐页、底部 Tab、视频详情与动态推荐；脚本每日同步并托管在本仓库。</p>
+<div class="notice"><b>必须完成一次 HTTPS 解密设置：</b>在 PopCat 打开 HTTPS 解密，安装并完全信任根证书。模块只解密 app.bilibili.com、grpc.biliapi.net、api.bilibili.com，不会对所有网站启用 MITM。</div>
+<p>iPhone / iPad：安装证书后，还需进入「设置 → 通用 → 关于本机 → 证书信任设置」，打开 PopCat 根证书的完全信任。若未完成，Bilibili 响应脚本不会运行。</p>
+<p>「海外代理」模式下已启用模块自动生效；不要打开模块详情中的「全局模式下生效」。</p>
+<a href="https://pop-cat.com/docs/mitm.html" target="_blank" rel="noopener">查看 PopCat HTTPS 解密说明 ↗</a>
+</div></section>
 <section><h2>上游规则来源</h2><p class="muted">每日从以下项目同步文件与版本信息。原始归档用于审查和迁移，不代表已通过 PopCat 兼容性验证。</p><div class="source-list" id="sources">
 <div class="source-item">ddgksf2013 / Rewrite<small>APP 专项配置</small></div><div class="source-item">ddgksf2013 / Scripts<small>脚本依赖</small></div><div class="source-item">Cats-Team / AdRules<small>通用广告规则</small></div><div class="source-item">AWAvenue<small>通用广告规则</small></div><div class="source-item">anti-AD<small>广告与隐私拦截</small></div><div class="source-item">Blackmatrix7<small>Advertising 规则</small></div><div class="source-item">app2smile / rules<small>APP 专项规则</small></div></div></section>
 <section><h2>上游文件归档</h2><p class="muted">可按文件名搜索已同步资源。点击文件可查看原始内容。</p><input id="search" type="search" placeholder="搜索规则或脚本，例如 WeiboAds、amap.js、Keep"><div id="fileList" class="files"><div class="muted">等待第一次同步……</div></div></section>
