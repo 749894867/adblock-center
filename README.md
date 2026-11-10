@@ -10,7 +10,7 @@
 
 ## 更新机制
 
-- 每天 04:00 UTC（新加坡时间 12:00）执行上游同步。
+- 每天 20:00 UTC（新加坡时间次日 04:00）执行上游同步。
 - `scripts/sync_sources.py` 抓取并归档上游文件。
 - `scripts/build_subscription.py` 从原始文件中提取可安全表达的域名/URL 拦截规则，统一生成一个 Surge 风格模块。
 - GitHub Actions 提交新内容并部署 GitHub Pages。
@@ -29,9 +29,12 @@
 
 ## 暂不自动转换的内容
 
-Quantumult X 的 `script-response-body`、`jsonjq-response-body`、脚本参数、MITM 相关配置不能直接等同于普通域名拦截规则，当前仅保留原始归档，等待单独适配和实测。IP 规则及复杂 AND/OR 规则也暂不自动并入，以降低误拦风险。
+Quantumult X 的 `script-response-body`、`jsonjq-response-body`、脚本参数、MITM 相关配置不能直接等同于普通域名拦截规则，当前仅保留原始归档，等待单独适配和实测。
+- 墨鱼 Rewrite 中的 `.conf` 多数是 Quantumult X 重写配置，不是可直接放进 Surge `[Script]` 的 JavaScript 文件；不能把它们作为 `script-path` 使用。需要先按客户端语法转换，并单独验证脚本兼容性。IP 规则及复杂 AND/OR 规则也暂不自动并入，以降低误拦风险。
 
 ## Apple Intelligence
+
+当前 Blackmatrix7 主分支不存在旧地址 `rule/Surge/AppleIntelligence/AppleIntelligence.list`，因此不再依赖该失效地址；也不把覆盖范围很广的 Apple 全量规则误当成 AI 专用规则。
 
 继续独立维护，不合并进广告订阅：
 
