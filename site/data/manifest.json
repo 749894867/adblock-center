@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:16:35+00:00",
+  "generated_at": "2026-11-10T06:33:24+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -57,7 +57,7 @@
       "repo": "app2smile/rules",
       "branch": "master",
       "commit": "df6366a7024e0b3f0aa3510c5b791eea6f3cba89",
-      "file_count": 23,
+      "file_count": 25,
       "tree_truncated": false,
       "errors": []
     },
@@ -90,6 +90,24 @@
       "source_url": "https://github.com/TG-Twilight/AWAvenue-Ads-Rule/blob/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
       "bytes": 27494,
       "sha256": "d4e2ac925d4b6c9d5034ae2dbda2c3f2b30b9ef86b89e6d752eb90335ff11125"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "js/bilibili-json.js",
+      "site_path": "sources/app2smile/js/bilibili-json.js",
+      "source_url": "https://github.com/app2smile/rules/blob/master/js/bilibili-json.js",
+      "bytes": 4959,
+      "sha256": "748ad16a92532bde2c439a8b9975f465381d20e24328cf2a58ff3a2a27328d84"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "js/bilibili-proto.js",
+      "site_path": "sources/app2smile/js/bilibili-proto.js",
+      "source_url": "https://github.com/app2smile/rules/blob/master/js/bilibili-proto.js",
+      "bytes": 106934,
+      "sha256": "70fa7cf0e3390da24db93bcfbf0c81c2af17b16f99012b483783f046f62c476e"
     },
     {
       "repo": "app2smile/rules",
@@ -1033,7 +1051,7 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-10T06:16:37+00:00",
+    "generated_at": "2026-11-10T06:33:27+00:00",
     "rule_count": 223480,
     "size_bytes": 7723840,
     "max_safe_bytes": 8000000,
@@ -1042,7 +1060,7 @@
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T06:16:37+00:00",
+    "generated_at": "2026-11-10T06:33:27+00:00",
     "rule_count": 223480,
     "size_bytes": 1712,
     "shard_count": 16,
@@ -1163,7 +1181,7 @@
     "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   },
   "apple_intelligence": {
-    "generated_at": "2026-11-10T06:16:38+00:00",
+    "generated_at": "2026-11-10T06:33:27+00:00",
     "source_url": "https://support.apple.com/en-us/101555",
     "source_mode": "live",
     "policy_group": "默认",
