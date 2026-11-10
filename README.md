@@ -34,13 +34,13 @@ Quantumult X 的 `script-response-body`、`jsonjq-response-body`、脚本参数�
 
 ## Apple Intelligence
 
-当前 Blackmatrix7 主分支不存在旧地址 `rule/Surge/AppleIntelligence/AppleIntelligence.list`，因此不再依赖该失效地址；也不把覆盖范围很广的 Apple 全量规则误当成 AI 专用规则。
+Blackmatrix7 主分支已不存在旧地址 `rule/Surge/AppleIntelligence/AppleIntelligence.list`。现在由 `scripts/build_apple_intelligence.py` 每天读取 [Apple 官方企业网络支持文档](https://support.apple.com/en-us/101555) 中的 Apple Intelligence、Siri 与 Search 主机表，生成独立分流模块；页面结构临时变化或无法访问时，使用最后验证过的官方主机列表作为回退，并在 manifest 中标记来源模式。不会把范围过广的 Apple 全量规则误当成 AI 专用规则。
 
 继续独立维护，不合并进广告订阅：
 
 `https://749894867.github.io/adblock-center/downloads/Apple-Intelligence-Route.sgmodule`
 
-策略组名称为「默认」，需与 PopCat 中实际存在的策略名称一致。
+策略组默认名称为「默认」，需与 PopCat 中实际存在的策略名称一致。若要改为「美国节点」，在 GitHub 仓库 Settings → Secrets and variables → Actions → Variables 中添加 `APPLE_INTELLIGENCE_POLICY`，值设为 `美国节点`。本模块不包含 MITM。
 
 ## 重要说明
 
