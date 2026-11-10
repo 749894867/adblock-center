@@ -34,7 +34,7 @@ jobs:
 
       - name: Synchronize upstream sources
         env:
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/sync_sources.py
 
       - name: Build stable PopCat subscription
@@ -66,5 +66,5 @@ jobs:
 
       - name: Print subscription URL
         run: |
-          echo "Published site: \${{ steps.deployment.outputs.page_url }}"
+          echo "Published site: ${{ steps.deployment.outputs.page_url }}"
           echo "Stable subscription: https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule"
