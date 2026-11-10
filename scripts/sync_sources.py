@@ -107,7 +107,7 @@ def sync_repo_source(spec):
 
 def sync_linked_dependencies(config_entries):
     """Download GitHub raw/Gist dependencies referenced by the synced MuYu configs."""
-    url_re = re.compile(r"https?://(?:raw\.githubusercontent\.com|gist\.githubusercontent\.com)/[^\s,"'<>]+", re.I)
+    url_re = re.compile(r"https?://(?:raw\.githubusercontent\.com|gist\.githubusercontent\.com)/[^\s,]+", re.I)
     seen, results = set(), []
     allowed = ("raw.githubusercontent.com", "gist.githubusercontent.com")
     for entry in config_entries:
