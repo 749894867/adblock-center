@@ -2,7 +2,7 @@
 #!desc=固定 HTTPS 订阅入口；规则分片每日同步更新，无需重复导入。
 #!category=AdBlock
 #
-# Generated: 2026-11-10T06:14:32+00:00
+# Generated: 2026-11-10T06:16:37+00:00
 # Rules: 223480
 # Remote rule shards: 16
 # The module stays small; each external list contains only PopCat-supported domain rule types.
