@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # 04:00 UTC = 12:00 Asia/Singapore
-    - cron: "0 4 * * *"
+    # 20:00 UTC = 04:00 Asia/Singapore (the following calendar day)
+    - cron: "0 20 * * *"
   workflow_dispatch:
 
 permissions:
