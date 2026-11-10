@@ -153,7 +153,7 @@ def rule_policy(url: str) -> str:
         return "direct"
     if "adrules" in name or "blockiosupdate" in name:
         return "reject"
-    return "proxy"
+    return "PROXY"
 
 
 def make_filter_line(url: str, tag: str, policy: str, opt_parser: str = "true",
