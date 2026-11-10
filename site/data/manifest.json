@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:27:42+00:00",
+  "generated_at": "2026-11-10T05:55:46+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1033,16 +1033,16 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-10T05:27:45+00:00",
+    "generated_at": "2026-11-10T05:55:48+00:00",
     "rule_count": 223591,
-    "size_bytes": 7955339,
+    "size_bytes": 7731747,
     "max_safe_bytes": 8000000,
     "format": "Surge/Shadowrocket RULE-SET text; policy is selected in the client"
   },
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T05:27:45+00:00",
+    "generated_at": "2026-11-10T05:55:48+00:00",
     "rule_count": 223591,
     "size_bytes": 740,
     "shard_count": 4,
@@ -1079,8 +1079,8 @@
     "files_contributing_rules": 23,
     "rule_types": {
       "DOMAIN-SUFFIX": 223195,
-      "DOMAIN-KEYWORD": 282,
       "URL-REGEX": 111,
+      "DOMAIN-KEYWORD": 282,
       "DOMAIN": 3
     },
     "source_rule_counts": {
