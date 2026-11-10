@@ -366,7 +366,7 @@ def main() -> None:
 </body>
 </html>
 """
-    INSTALL_PAGE.write_text(page, encoding="utf-8", newline="\\n")
+    INSTALL_PAGE.write_text(page, encoding="utf-8", newline="\n")
     print(f"[DONE] wrote {len(output.encode('utf-8'))} bytes to {len(OUTPUTS)} locations")
 
 
