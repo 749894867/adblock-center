@@ -69,6 +69,12 @@ Blackmatrix7 主分支已不存在旧地址 `rule/Surge/AppleIntelligence/AppleI
 
 独立于上面的 PopCat 模块，提供一个 Quantumult X 远程规则合集：
 
+**建议使用一键添加页，而不是直接点击原始 `.conf` 文件：**
+
+`https://749894867.github.io/adblock-center/qx-install.html`
+
+该页面使用 Quantumult X 官方 `add-resource` URL Scheme，把远程重写和分流条目追加到现有配置，不覆盖已有资源。
+
 `https://749894867.github.io/adblock-center/downloads/QuantumultX-Moyu-Rules.conf`
 
 - 这是 **Quantumult X 规则资源文件**，包含 `[rewrite_remote]` 和 `[filter_remote]`，不是完整代理配置；不包含节点订阅、DNS、MITM 证书、策略组或个人代理服务器设置。请将这两个区块合并到你现有的 QX 主配置中，不要用它替换完整主配置。
