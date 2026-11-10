@@ -63,3 +63,21 @@ Blackmatrix7 主分支已不存在旧地址 `rule/Surge/AppleIntelligence/AppleI
 - 极限拦截可能影响登录、搜索、定位、播放或支付功能。
 - 上游原始文件保留来源和 SHA256，便于审查及回滚。
 - PopCat 是否自动刷新远程模块由客户端自身设置决定；服务器端固定地址会每日更新。
+
+
+## Quantumult X 墨鱼规则合集
+
+独立于上面的 PopCat 模块，提供一个 Quantumult X 远程规则合集：
+
+`https://749894867.github.io/adblock-center/downloads/QuantumultX-Moyu-Rules.conf`
+
+- 这是 **Quantumult X 规则资源文件**，包含 `[rewrite_remote]` 和 `[filter_remote]`，不是完整代理配置；不包含节点订阅、DNS、MITM 证书、策略组或个人代理服务器设置。请将这两个区块合并到你现有的 QX 主配置中，不要用它替换完整主配置。
+- 每天同步墨鱼 README 中仍有效的 QX `.conf` / `.js` 项目、当前官方 QX 配置引用的远程资源，以及 `ddgksf2013/Filter` 仓库中的顶层 `.list` 列表。
+- 远程资源统一设置为 86400 秒更新。上游新增、移除或替换资源后，GitHub Actions 每天重新生成这个固定地址；客户端仍需按 Quantumult X 的资源更新机制刷新。
+- 规则分流使用 QX 内置的 `PROXY`、`DIRECT`、`REJECT` 策略，不依赖墨鱼配置中的「美国节点」「香港节点」等个人策略组。
+- 已排除上游标记失效/停止维护的条目，以及不适用于 QX 的 `.sgmodule` / `.snippet`；同时排除上游注明不建议使用的 IP 归属地规则、注明 Surge 专用的微信全量规则，以及当前配置已移除的 TikTok 规则。当前 Bilibili 主配置使用 Lite 重写，避免再叠加旧版 Bilibili 重写。
+- 上游规则和脚本仍由原作者托管，本仓库只维护订阅索引，不复制第三方脚本内容。
+
+每日同步时间：20:00 UTC（新加坡时间次日 04:00）。订阅固定地址不变：
+`/downloads/QuantumultX-Moyu-Rules.conf`
+
