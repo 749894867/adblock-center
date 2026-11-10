@@ -1,0 +1,21 @@
+#!name=Apple Intelligence 优先分流（独立）
+#!desc=将 Apple Intelligence、Siri 与相关 Apple 服务主机交由策略组「默认」。不包含 MITM。
+#!category=Apple
+
+[Rule]
+DOMAIN-SUFFIX,gateway.icloud.com,默认
+DOMAIN-SUFFIX,apple-relay.apple.com,默认
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,默认
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,默认
+DOMAIN-SUFFIX,guzzoni.apple.com,默认
+DOMAIN-SUFFIX,cp4.cloudflare.com,默认
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,默认
+DOMAIN-SUFFIX,smoot.apple.com,默认
+DOMAIN-SUFFIX,apple-relay.akamaized.net,默认
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,默认
+DOMAIN-SUFFIX,api-siri-prod.apple.com,默认
+
+# 注意：
+# 1. 「默认」必须是客户端中真实存在且出口符合预期的策略组。
+# 2. 本文件仅提供路由，不对 Apple 域名配置 HTTPS MITM。
+# 3. 此模块尚未在用户的 PopCat 版本/节点上完成实测。
