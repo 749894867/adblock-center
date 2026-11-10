@@ -9,7 +9,7 @@ import json
 import os
 import re
 import sys
-import time
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -21,7 +21,7 @@ SITE = ROOT / "site"
 SOURCE_ROOT = SITE / "sources"
 MANIFEST = SITE / "data" / "manifest.json"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
-MAX_FILES_PER_SOURCE = 120
+MAX_FILES_PER_SOURCE = 5000
 MAX_FILE_BYTES = 2_000_000
 USER_AGENT = "AdBlock-Center-Upstream-Sync/1.0"
 
@@ -107,7 +107,7 @@ def sync_repo_source(spec):
 
 def sync_linked_dependencies(config_entries):
     """Download GitHub raw/Gist dependencies referenced by the synced MuYu configs."""
-    url_re = re.compile(r'https?://(?:raw\\.githubusercontent\\.com|gist\\.githubusercontent\\.com)/[^\\s\\"\'<>]+', re.I)
+    url_re = re.compile(r"https?://(?:raw\.githubusercontent\.com|gist\.githubusercontent\.com)/[^\s\"'<>]+", re.I)
     seen, results = set(), []
     allowed = ("raw.githubusercontent.com", "gist.githubusercontent.com")
     for entry in config_entries:
@@ -122,7 +122,7 @@ def sync_linked_dependencies(config_entries):
             if parsed.hostname not in allowed or url in seen:
                 continue
             seen.add(url)
-            if len(results) >= 100:
+            if len(results) >= 300:
                 return results
             try:
                 data = request_bytes(url)
@@ -145,7 +145,10 @@ def main():
     SITE.mkdir(parents=True, exist_ok=True)
     (SITE / "data").mkdir(parents=True, exist_ok=True)
     SOURCE_ROOT.mkdir(parents=True, exist_ok=True)
-    # Avoid stale removed upstream files being mistaken for current files.
+    # Rebuild the source mirror from the current upstream state; do not expose stale deleted files.
+    if SOURCE_ROOT.exists():
+        shutil.rmtree(SOURCE_ROOT)
+    SOURCE_ROOT.mkdir(parents=True, exist_ok=True)
     entries, source_rows = [], []
     for spec in SOURCES:
         got, row = sync_repo_source(spec)
@@ -153,7 +156,7 @@ def main():
         source_rows.append(row)
         print(f"[SYNC] {row['name']}: {row['file_count']} files")
     rewrite_entries = [e for e in entries if e["repo"] == "ddgksf2013/Rewrite"]
-    linked = sync_linked_dependencies(rewrite_entries)
+    linked = sync_linked_dependencies(entries)
     entries.extend(linked)
     source_rows.append({
         "id":"muyu-linked-dependencies","name":"墨鱼配置引用的 GitHub/Gist 脚本依赖",
