@@ -62,11 +62,14 @@ jobs:
           APPLE_INTELLIGENCE_POLICY: ${{ vars.APPLE_INTELLIGENCE_POLICY || '默认' }}
         run: python scripts/build_apple_intelligence.py
 
+      - name: Build Quantumult X rule bundle
+        run: python scripts/build_ddgks_qx_bundle.py
+
       - name: Commit synchronized rules and subscription
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/sources site/data/manifest.json site/downloads/AdBlock-Center.sgmodule site/downloads/Apple-Intelligence-Route.sgmodule downloads/Apple-Intelligence-Route.sgmodule site/rules site/scripts
+          git add site/sources site/data/manifest.json site/downloads/AdBlock-Center.sgmodule site/downloads/Apple-Intelligence-Route.sgmodule downloads/Apple-Intelligence-Route.sgmodule downloads/QuantumultX-Moyu-Rules.conf site/downloads/QuantumultX-Moyu-Rules.conf scripts/build_ddgks_qx_bundle.py site/rules site/scripts
           if git diff --cached --quiet; then
             echo "No source or subscription changes."
           else
@@ -89,4 +92,5 @@ jobs:
       - name: Print subscription URL
         run: |
           echo "Published site: ${{ steps.deployment.outputs.page_url }}"
-          echo "Stable subscription: https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule"
+          echo "Stable PopCat subscription: https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule"
+          echo "Stable Quantumult X rules: https://749894867.github.io/adblock-center/downloads/QuantumultX-Moyu-Rules.conf"
