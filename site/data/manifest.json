@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T04:59:05+00:00",
+  "generated_at": "2026-11-10T05:01:46+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1029,5 +1029,27 @@
     }
   ],
   "errors": [],
-  "status_note": "上游已同步不代表 PopCat 兼容；未经转换和设备实测的文件仅作为原始归档。"
+  "status_note": "上游已同步不代表 PopCat 兼容；未经转换和设备实测的文件仅作为原始归档。",
+  "subscription": {
+    "path": "downloads/AdBlock-Center.sgmodule",
+    "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
+    "generated_at": "2026-11-10T05:01:48+00:00",
+    "rule_count": 227591,
+    "source_files_scanned": 74,
+    "files_contributing_rules": 23,
+    "rule_types": {
+      "DOMAIN-SUFFIX": 226238,
+      "DOMAIN": 960,
+      "DOMAIN-KEYWORD": 282,
+      "URL-REGEX": 111
+    },
+    "source_rule_counts": {
+      "anti-ad": 103068,
+      "awavenue": 964,
+      "blackmatrix7": 292,
+      "cats-team": 123170,
+      "ddgksf2013-rewrite": 97
+    },
+    "compatibility_note": "Conservative Surge-style rules only. QX script-response-body and jsonjq-response-body rewrites are not included."
+  }
 }
