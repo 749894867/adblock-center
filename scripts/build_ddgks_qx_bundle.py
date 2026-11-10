@@ -6,12 +6,16 @@ rule/script source. QX downloads each remote resource according to its interval.
 """
 from __future__ import annotations
 
+import html
+import json
 import re
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
+INSTALL_PAGE = ROOT / "site" / "qx-install.html"
 OUTPUTS = (
     ROOT / "downloads" / "QuantumultX-Moyu-Rules.conf",
     ROOT / "site" / "downloads" / "QuantumultX-Moyu-Rules.conf",
@@ -291,7 +295,6 @@ def main() -> None:
     readme = fetch_text(README_URL)
     profile = fetch_text(PROFILE_URL)
     tree_payload = fetch_text(FILTER_TREE_URL)
-    import json
     filter_tree = json.loads(tree_payload)
 
     rewrite_lines = build_rewrite_lines(readme, profile)
@@ -316,6 +319,54 @@ def main() -> None:
     for path in OUTPUTS:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8", newline="\n")
+    # Build a one-tap QX add-resource link. It appends resources and preserves
+    # the existing profile; it does not use update-configuration.
+    payload = json.dumps(
+        {"rewrite_remote": rewrite_lines, "filter_remote": filter_lines},
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+    encoded_payload = quote(payload, safe="")
+    universal_link = (
+        "https://quantumult.app/x/open-app/add-resource?remote-resource="
+        + encoded_payload
+    )
+    custom_scheme_link = (
+        "quantumult-x:///add-resource?remote-resource=" + encoded_payload
+    )
+    INSTALL_PAGE.parent.mkdir(parents=True, exist_ok=True)
+    page = f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Quantumult X 墨鱼规则合集 · 一键添加</title>
+  <style>
+    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 680px; margin: 48px auto; padding: 0 20px; color: #172033; line-height: 1.65; }}
+    h1 {{ font-size: 25px; }}
+    a.button {{ display: block; margin: 18px 0; padding: 14px 18px; border-radius: 12px; background: #1769d2; color: white; text-decoration: none; font-weight: 650; text-align: center; }}
+    a.secondary {{ display: block; margin: 14px 0; padding: 12px; border: 1px solid #9ca3af; border-radius: 12px; color: #172033; text-align: center; text-decoration: none; }}
+    .note {{ background: #f3f4f6; border-radius: 12px; padding: 14px 16px; }}
+    small {{ color: #596579; }}
+  </style>
+</head>
+<body>
+  <h1>Quantumult X · 墨鱼规则合集</h1>
+  <p>本页将当前生成的远程重写和分流资源添加到 Quantumult X。</p>
+  <a class="button" href="{html.escape(universal_link, quote=True)}">一键添加到 Quantumult X</a>
+  <a class="secondary" href="{html.escape(custom_scheme_link, quote=True)}">备用方式：使用 Quantumult X URL Scheme</a>
+  <div class="note">
+    <strong>安全说明</strong><br>
+    使用 add-resource 操作，会追加远程资源，不会替换现有代理订阅或主配置。<br>
+    每条远程资源设置为每天更新一次。
+  </div>
+  <p><small>当前资源：{len(rewrite_lines)} 条远程重写、{len(filter_lines)} 条远程分流。若通用链接没有唤起 App，请使用备用方式，或检查 Quantumult X 版本及 iOS 通用链接状态。</small></p>
+  <p><a href="https://raw.githubusercontent.com/749894867/adblock-center/main/downloads/QuantumultX-Moyu-Rules.conf">查看原始 .conf 规则索引</a></p>
+</body>
+</html>
+"""
+    INSTALL_PAGE.write_text(page, encoding="utf-8", newline="\\n")
     print(f"[DONE] wrote {len(output.encode('utf-8'))} bytes to {len(OUTPUTS)} locations")
 
 
