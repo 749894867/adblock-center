@@ -138,6 +138,46 @@ def main() -> None:
     if not rules:
         raise SystemExit("No compatible blocking rules were found; refusing to publish an empty subscription")
 
+    # Compact equivalent domain-suffix rules. DOMAIN-SUFFIX,example.com also
+    # covers every subdomain, so a narrower suffix such as api.example.com is
+    # redundant whenever the broader suffix is already present.
+    suffixes = {
+        rule.split(",", 2)[1].strip().lower().rstrip(".")
+        for rule in rules
+        if rule.startswith("DOMAIN-SUFFIX,")
+    }
+    compact_suffixes: set[str] = set()
+    redundant_suffixes = 0
+    for domain in sorted(suffixes, key=lambda d: (d.count("."), len(d), d)):
+        labels = domain.split(".")
+        covered = any(".".join(labels[i:]) in suffixes for i in range(1, len(labels)))
+        if covered:
+            redundant_suffixes += 1
+        else:
+            compact_suffixes.add(domain)
+
+    compact_rules: set[str] = set()
+    redundant_exact_domains = 0
+    for rule in rules:
+        kind, value, action = rule.split(",", 2)
+        if kind == "DOMAIN-SUFFIX":
+            value = value.strip().lower().rstrip(".")
+            if value not in compact_suffixes:
+                continue
+            compact_rules.add(f"DOMAIN-SUFFIX,{value},{action}")
+        elif kind == "DOMAIN":
+            domain = value.strip().lower().rstrip(".")
+            labels = domain.split(".")
+            covered = any(".".join(labels[i:]) in compact_suffixes for i in range(len(labels)))
+            if covered:
+                redundant_exact_domains += 1
+                continue
+            compact_rules.add(f"DOMAIN,{domain},{action}")
+        else:
+            compact_rules.add(rule)
+
+    rules = compact_rules
+    per_type = Counter(rule.split(",", 1)[0] for rule in rules)
     ordered_types = ["DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "URL-REGEX"]
     ordered_rules = sorted(
         rules,
@@ -164,7 +204,14 @@ def main() -> None:
     ]
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     temp_output = OUTPUT.with_suffix(OUTPUT.suffix + ".tmp")
-    temp_output.write_text("\n".join(header), encoding="utf-8")
+    output_text = "\n".join(header)
+    output_bytes = len(output_text.encode("utf-8"))
+    if output_bytes > 7_800_000:
+        raise SystemExit(
+            f"Subscription remains too large ({output_bytes} bytes); "
+            "will not publish a file that exceeds PopCat's 8 MiB response limit."
+        )
+    temp_output.write_text(output_text, encoding="utf-8")
     temp_output.replace(OUTPUT)
 
     manifest = {}
@@ -178,6 +225,9 @@ def main() -> None:
         "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
         "generated_at": generated_at,
         "rule_count": len(ordered_rules),
+        "size_bytes": output_bytes,
+        "redundant_suffix_rules_removed": redundant_suffixes,
+        "redundant_exact_domain_rules_removed": redundant_exact_domains,
         "source_files_scanned": scanned_files,
         "files_contributing_rules": files_with_rules,
         "rule_types": dict(per_type),
