@@ -50,11 +50,13 @@ def normalize_rule(line: str) -> str | None:
     payload = rest.strip()
     if not payload:
         return None
-    for action in BLOCK_ACTIONS:
-        suffix = "," + action
-        if payload.upper().endswith(suffix):
-            payload = payload[:-len(suffix)].rstrip()
-            break
+    policy_markers = BLOCK_ACTIONS | {"DIRECT", "PROXY", "PASS", "COMPATIBLE", "DEFAULT"}
+    if "," in payload:
+        possible_policy = payload.rsplit(",", 1)[-1].strip().upper()
+        if possible_policy in policy_markers:
+            if possible_policy not in BLOCK_ACTIONS:
+                return None
+            payload = payload.rsplit(",", 1)[0].rstrip()
     if not payload:
         return None
     return f"URL-REGEX,{payload},REJECT"
