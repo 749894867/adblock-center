@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:38:48+00:00",
+  "generated_at": "2026-11-10T06:42:37+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -67,7 +67,7 @@
       "repo": "多来源",
       "branch": "引用 URL",
       "commit": null,
-      "file_count": 55,
+      "file_count": 60,
       "tree_truncated": false,
       "errors": []
     }
@@ -598,6 +598,15 @@
     {
       "repo": "linked dependency",
       "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-proto-test.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-proto-test.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-proto-test.js",
+      "bytes": 106934,
+      "sha256": "70fa7cf0e3390da24db93bcfbf0c81c2af17b16f99012b483783f046f62c476e"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
       "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-proto.js",
       "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-proto.js",
       "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-proto.js",
@@ -661,11 +670,29 @@
     {
       "repo": "linked dependency",
       "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-json2.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-json2.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json2.js",
+      "bytes": 8985,
+      "sha256": "8d712df697b8ca775f0faca60e17462de24e7449ac2b0b6b9e6f00feb26d03e0"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
       "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-proto.js",
       "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-proto.js",
       "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
       "bytes": 97069,
       "sha256": "6015d737870b6d89c38a0181479ed715e07d11b5a2c3746f96f95e25835e8610"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-proto2.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-proto2.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto2.js",
+      "bytes": 82612,
+      "sha256": "63be480f643921e3f8d531648b3f73142c323dbf1f8ba3c8f591a91ea309d8bb"
     },
     {
       "repo": "linked dependency",
@@ -693,6 +720,24 @@
       "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/zhihu.js",
       "bytes": 5643,
       "sha256": "f37f82608f476d08652035f4a0c2ec5576923962f554e69f5f53ec9f1b80fa4d"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/rule/tieba-ad.list",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/rule/tieba-ad.list",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.list",
+      "bytes": 86,
+      "sha256": "93599502d9498d4977f007d89511b2918afc6398dad5b8cece25057b2fbff7a3"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/rule/zhihu-ad.list",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/rule/zhihu-ad.list",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/rule/zhihu-ad.list",
+      "bytes": 149,
+      "sha256": "f5a8e9f34f529f92206f394f369a3f7346712be0fc2db9dab222e16a8c9eb8ad"
     },
     {
       "repo": "linked dependency",
@@ -1051,9 +1096,9 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-10T06:38:50+00:00",
-    "rule_count": 223480,
-    "size_bytes": 7723840,
+    "generated_at": "2026-11-10T06:42:40+00:00",
+    "rule_count": 223482,
+    "size_bytes": 7723883,
     "max_safe_bytes": 8000000,
     "format": "Surge/Shadowrocket RULE-SET text; policy is selected in the client"
   },
@@ -1096,8 +1141,8 @@
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T06:38:50+00:00",
-    "rule_count": 223480,
+    "generated_at": "2026-11-10T06:42:40+00:00",
+    "rule_count": 223482,
     "size_bytes": 2469,
     "shard_count": 16,
     "largest_shard_bytes": 500058,
@@ -1105,119 +1150,120 @@
       {
         "path": "rules/AdBlock-01.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-01.list",
-        "rule_count": 15484,
-        "size_bytes": 500052
+        "rule_count": 15485,
+        "size_bytes": 500057
       },
       {
         "path": "rules/AdBlock-02.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-02.list",
         "rule_count": 14686,
-        "size_bytes": 500027
+        "size_bytes": 500025
       },
       {
         "path": "rules/AdBlock-03.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-03.list",
         "rule_count": 13989,
-        "size_bytes": 500052
+        "size_bytes": 500050
       },
       {
         "path": "rules/AdBlock-04.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-04.list",
-        "rule_count": 14068,
-        "size_bytes": 500051
+        "rule_count": 14067,
+        "size_bytes": 500031
       },
       {
         "path": "rules/AdBlock-05.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-05.list",
         "rule_count": 14787,
-        "size_bytes": 500058
+        "size_bytes": 500057
       },
       {
         "path": "rules/AdBlock-06.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-06.list",
         "rule_count": 14324,
-        "size_bytes": 500039
+        "size_bytes": 500042
       },
       {
         "path": "rules/AdBlock-07.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-07.list",
-        "rule_count": 14466,
-        "size_bytes": 500039
+        "rule_count": 14467,
+        "size_bytes": 500054
       },
       {
         "path": "rules/AdBlock-08.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-08.list",
         "rule_count": 13696,
-        "size_bytes": 500027
+        "size_bytes": 500034
       },
       {
         "path": "rules/AdBlock-09.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-09.list",
         "rule_count": 14789,
-        "size_bytes": 500054
+        "size_bytes": 500056
       },
       {
         "path": "rules/AdBlock-10.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-10.list",
         "rule_count": 14879,
-        "size_bytes": 500028
+        "size_bytes": 500021
       },
       {
         "path": "rules/AdBlock-11.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-11.list",
         "rule_count": 13941,
-        "size_bytes": 500052
+        "size_bytes": 500056
       },
       {
         "path": "rules/AdBlock-12.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-12.list",
         "rule_count": 14110,
-        "size_bytes": 500026
+        "size_bytes": 500033
       },
       {
         "path": "rules/AdBlock-13.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-13.list",
         "rule_count": 14051,
-        "size_bytes": 500034
+        "size_bytes": 500032
       },
       {
         "path": "rules/AdBlock-14.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-14.list",
         "rule_count": 14405,
-        "size_bytes": 500051
+        "size_bytes": 500058
       },
       {
         "path": "rules/AdBlock-15.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-15.list",
         "rule_count": 14962,
-        "size_bytes": 500041
+        "size_bytes": 500032
       },
       {
         "path": "rules/AdBlock-16.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-16.list",
-        "rule_count": 6843,
-        "size_bytes": 224079
+        "rule_count": 6844,
+        "size_bytes": 224115
       }
     ],
     "redundant_suffix_rules_removed": 3043,
     "redundant_exact_domain_rules_removed": 957,
-    "source_files_scanned": 74,
-    "files_contributing_rules": 4,
+    "source_files_scanned": 76,
+    "files_contributing_rules": 6,
     "rule_types": {
       "DOMAIN-SUFFIX": 223195,
       "DOMAIN-KEYWORD": 282,
-      "DOMAIN": 3
+      "DOMAIN": 5
     },
     "source_rule_counts": {
       "anti-ad": 103068,
       "awavenue": 964,
       "blackmatrix7": 278,
-      "cats-team": 123170
+      "cats-team": 123170,
+      "dependencies": 2
     },
     "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   },
   "apple_intelligence": {
-    "generated_at": "2026-11-10T06:38:50+00:00",
+    "generated_at": "2026-11-10T06:42:40+00:00",
     "source_url": "https://support.apple.com/en-us/101555",
     "source_mode": "live",
     "policy_group": "默认",
