@@ -40,6 +40,10 @@ jobs:
       - name: Build stable PopCat subscription
         run: python scripts/build_subscription.py
 
+      - name: Validate Bilibili scripts
+        run: |
+          node --check site/scripts/bilibili-json.js
+          node --check site/scripts/bilibili-proto.js
       - name: Build Apple Intelligence route module
         env:
           APPLE_INTELLIGENCE_POLICY: ${{ vars.APPLE_INTELLIGENCE_POLICY || '默认' }}
@@ -49,7 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/sources site/data/manifest.json site/downloads/AdBlock-Center.sgmodule site/downloads/Apple-Intelligence-Route.sgmodule downloads/Apple-Intelligence-Route.sgmodule site/rules
+          git add site/sources site/data/manifest.json site/downloads/AdBlock-Center.sgmodule site/downloads/Apple-Intelligence-Route.sgmodule downloads/Apple-Intelligence-Route.sgmodule site/rules site/scripts
           if git diff --cached --quiet; then
             echo "No source or subscription changes."
           else
