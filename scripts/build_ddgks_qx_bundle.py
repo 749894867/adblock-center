@@ -148,10 +148,10 @@ def parse_options(line: str) -> dict[str, str]:
 
 
 def rule_policy(url: str) -> str:
-    name = url.rsplit("/", 1)[-1].lower()
-    if "unbreak" in name or "asn.china" in name:
+    value = url.lower()
+    if "unbreak" in value or "asn.china" in value:
         return "direct"
-    if "adrules" in name or "blockiosupdate" in name:
+    if "adrules" in value or "blockiosupdate" in value:
         return "reject"
     return "PROXY"
 
