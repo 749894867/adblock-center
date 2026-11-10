@@ -1,52 +1,1033 @@
 {
-  "generated_at": null,
+  "generated_at": "2026-11-10T04:37:12+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
       "name": "墨鱼 Rewrite",
       "repo": "ddgksf2013/Rewrite",
-      "file_count": 0
-    },
-    {
-      "id": "muyu-linked-dependencies",
-      "name": "配置引用的 GitHub/Gist 脚本依赖",
-      "repo": "多来源",
-      "file_count": 0
+      "branch": "master",
+      "commit": "dc3ea2c1fb2db870676b26da24006083eb1d44d3",
+      "file_count": 24,
+      "tree_truncated": false,
+      "errors": []
     },
     {
       "id": "cats-team",
       "name": "Cats-Team AdRules",
       "repo": "Cats-Team/AdRules",
-      "file_count": 0
+      "branch": "main",
+      "commit": "d3b1621c9e395a506788c12a7e21e4e518d259c4",
+      "file_count": 1,
+      "tree_truncated": false,
+      "errors": []
     },
     {
       "id": "awavenue",
       "name": "AWAvenue",
       "repo": "TG-Twilight/AWAvenue-Ads-Rule",
-      "file_count": 0
+      "branch": "main",
+      "commit": "72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa",
+      "file_count": 1,
+      "tree_truncated": false,
+      "errors": []
     },
     {
       "id": "anti-ad",
       "name": "anti-AD",
       "repo": "privacy-protection-tools/anti-AD",
-      "file_count": 0
+      "branch": "master",
+      "commit": "2b83ce2de8e7d217385da1cee42dcaa2ea3f08f6",
+      "file_count": 1,
+      "tree_truncated": false,
+      "errors": []
     },
     {
       "id": "blackmatrix7",
       "name": "Blackmatrix7 Advertising",
       "repo": "blackmatrix7/ios_rule_script",
-      "file_count": 0
+      "branch": "master",
+      "commit": "0b6897dc17e0c513d25449c935a9694818e32f0c",
+      "file_count": 1,
+      "tree_truncated": false,
+      "errors": []
     },
     {
       "id": "app2smile",
       "name": "app2smile rules",
       "repo": "app2smile/rules",
-      "file_count": 0
+      "branch": "master",
+      "commit": "df6366a7024e0b3f0aa3510c5b791eea6f3cba89",
+      "file_count": 23,
+      "tree_truncated": false,
+      "errors": []
+    },
+    {
+      "id": "muyu-linked-dependencies",
+      "name": "墨鱼配置引用的 GitHub/Gist 脚本依赖",
+      "repo": "多来源",
+      "branch": "引用 URL",
+      "commit": null,
+      "file_count": 55,
+      "tree_truncated": false,
+      "errors": []
     }
   ],
-  "files": [],
-  "errors": [
-    "首次自动同步尚未运行。"
+  "files": [
+    {
+      "repo": "Cats-Team/AdRules",
+      "category": "通用广告规则",
+      "path": "adrules-surge.conf",
+      "site_path": "sources/cats-team/adrules-surge.conf",
+      "source_url": "https://github.com/Cats-Team/AdRules/blob/main/adrules-surge.conf",
+      "bytes": 7297559,
+      "sha256": "1967c9a956227a6ef641a7dcc0874909d9a284199cc5a88d22eed1a04a12d120"
+    },
+    {
+      "repo": "TG-Twilight/AWAvenue-Ads-Rule",
+      "category": "通用广告规则",
+      "path": "Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "site_path": "sources/awavenue/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "source_url": "https://github.com/TG-Twilight/AWAvenue-Ads-Rule/blob/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "bytes": 27494,
+      "sha256": "d4e2ac925d4b6c9d5034ae2dbda2c3f2b30b9ef86b89e6d752eb90335ff11125"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/adsense.conf",
+      "site_path": "sources/app2smile/module/adsense.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/adsense.conf",
+      "bytes": 456,
+      "sha256": "b2e18d8cd52b7080023d35f942809fc1ad3d93d6cc72e9deb7ca0f0f9f63b529"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/adsense.sgmodule",
+      "site_path": "sources/app2smile/module/adsense.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/adsense.sgmodule",
+      "bytes": 578,
+      "sha256": "0086ac27353181cd1ce7da1ccaffd1dd56c2ec769374fb00ac81479de222a65a"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/baidu-no-redirect.sgmodule",
+      "site_path": "sources/app2smile/module/baidu-no-redirect.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/baidu-no-redirect.sgmodule",
+      "bytes": 364,
+      "sha256": "4967b2602e60ac6c0819d0b21961d76f0bbd5242fdcb993ded9f6c3ea14af67e"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/baidumap.sgmodule",
+      "site_path": "sources/app2smile/module/baidumap.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/baidumap.sgmodule",
+      "bytes": 417,
+      "sha256": "c1ffc54a7fbdc5b6f32c89b4395a7b5b836f978e582c59c9bcc7837fb1cce404"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/bilibili-qx.conf",
+      "site_path": "sources/app2smile/module/bilibili-qx.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/bilibili-qx.conf",
+      "bytes": 678,
+      "sha256": "754551d06255a4518aec286d9b3c55a4b659e6b71e3bc954caba611d8c3c9c1b"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/bilibili-test.sgmodule",
+      "site_path": "sources/app2smile/module/bilibili-test.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/bilibili-test.sgmodule",
+      "bytes": 704,
+      "sha256": "385627ae41c314c7ebe17fe581e0fe334eb5e84b7fec726889f201f673d9106e"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/bilibili.sgmodule",
+      "site_path": "sources/app2smile/module/bilibili.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/bilibili.sgmodule",
+      "bytes": 984,
+      "sha256": "af7ee5612cd71318d81bbcda51eafc53e62a2a19f5d438fced97a7ac96689434"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/mitm.sgmodule",
+      "site_path": "sources/app2smile/module/mitm.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/mitm.sgmodule",
+      "bytes": 176,
+      "sha256": "a6cfe4e5aacf704c43058a877ab4b137e74122a83983e3ab730833be6cd8380d"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/qidian.conf",
+      "site_path": "sources/app2smile/module/qidian.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/qidian.conf",
+      "bytes": 1105,
+      "sha256": "d1a51bfec4d83cd9e9b2905084c627ee6c5cc652045d19d7a0c83e1a157d94d7"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/qidian.sgmodule",
+      "site_path": "sources/app2smile/module/qidian.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/qidian.sgmodule",
+      "bytes": 1236,
+      "sha256": "7ec098e9bf9333aee75ba39385f3e93a9b639e1d3e2cee49b760edcb15a5ad0d"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/qqnews.conf",
+      "site_path": "sources/app2smile/module/qqnews.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/qqnews.conf",
+      "bytes": 466,
+      "sha256": "d6b36c13cff7821f9000d019310d102c617f87c5e585a621d0e42f33b715517d"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/qqnews.sgmodule",
+      "site_path": "sources/app2smile/module/qqnews.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/qqnews.sgmodule",
+      "bytes": 634,
+      "sha256": "dbc36baa324c803bbcfdf0a6590faf58e2d5c8d8c18d1fd460a174600751847b"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/spotify.conf",
+      "site_path": "sources/app2smile/module/spotify.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/spotify.conf",
+      "bytes": 1016,
+      "sha256": "eec2c8e4004dd0b0b4753369a5bd108f02519e0597bdea64962ccc0d38cc612e"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/tieba-mini.sgmodule",
+      "site_path": "sources/app2smile/module/tieba-mini.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/tieba-mini.sgmodule",
+      "bytes": 543,
+      "sha256": "7cd31c2ce658d17390f4a3f20ac52a5fe66485a9f029a1015e0f53b80a5bd9d2"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/tieba-qx.conf",
+      "site_path": "sources/app2smile/module/tieba-qx.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/tieba-qx.conf",
+      "bytes": 967,
+      "sha256": "4b8070ddc17a013d7cd38ac92550b3d9eade6660129fc27f01f06e3f260fb6f1"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/tieba-test.sgmodule",
+      "site_path": "sources/app2smile/module/tieba-test.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/tieba-test.sgmodule",
+      "bytes": 995,
+      "sha256": "13260fe839a3625dab96040df46a69d34525ddf465802f4a2bb58ae657059804"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/tieba.sgmodule",
+      "site_path": "sources/app2smile/module/tieba.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/tieba.sgmodule",
+      "bytes": 1342,
+      "sha256": "b20d792a1f4466e97103266942176d6db4579340ba201a4fa8db91da2adfda29"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/vgtime.conf",
+      "site_path": "sources/app2smile/module/vgtime.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/vgtime.conf",
+      "bytes": 331,
+      "sha256": "3d8e201c8633b8c1b8370a135b3b36f47d06688aad2b852cff77a0d7c70e4596"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/vgtime.sgmodule",
+      "site_path": "sources/app2smile/module/vgtime.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/vgtime.sgmodule",
+      "bytes": 401,
+      "sha256": "c5378067afe09445a3ef174cce97df6deef5d7cb1e56a5ce291a4193b9eb4f49"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/youtube-qx.conf",
+      "site_path": "sources/app2smile/module/youtube-qx.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/youtube-qx.conf",
+      "bytes": 351,
+      "sha256": "4cb37284d2d56ded94e583a99a822b1f58bd3ddb7ce8efe8efb763092d307054"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/youtube.sgmodule",
+      "site_path": "sources/app2smile/module/youtube.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/youtube.sgmodule",
+      "bytes": 466,
+      "sha256": "4f5dd670d5763e8d3727cf1e76063eba6744f2d6c03c784e0bd98058a2f06515"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/zhihu.conf",
+      "site_path": "sources/app2smile/module/zhihu.conf",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/zhihu.conf",
+      "bytes": 621,
+      "sha256": "c1a524d70e397a8c5b5b497798b6469a7df7d7fd0c226ea3e69f61cf9c8827cc"
+    },
+    {
+      "repo": "app2smile/rules",
+      "category": "APP 专项规则",
+      "path": "module/zhihu.sgmodule",
+      "site_path": "sources/app2smile/module/zhihu.sgmodule",
+      "source_url": "https://github.com/app2smile/rules/blob/master/module/zhihu.sgmodule",
+      "bytes": 815,
+      "sha256": "91cdc117856fd4fa9075aeca800b8be6f1e5b3db3fd499b3aadf10d15e2fa8d8"
+    },
+    {
+      "repo": "blackmatrix7/ios_rule_script",
+      "category": "通用广告规则",
+      "path": "rule/Surge/Advertising/Advertising.list",
+      "site_path": "sources/blackmatrix7/rule/Surge/Advertising/Advertising.list",
+      "source_url": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Advertising/Advertising.list",
+      "bytes": 26927,
+      "sha256": "cda3e6804f933755773cfa8e5894f07489bfa1653951fc3780f4a21da02a5b5d"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/AmapAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/AmapAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/AmapAds.conf",
+      "bytes": 3924,
+      "sha256": "d0c1caf909e3e9151ec890eb31bc14dc28b34c49d6c8a1ef42c147cd949564b3"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/Applet.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/Applet.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Applet.conf",
+      "bytes": 2970,
+      "sha256": "6259647585e993f4b28897e8cba3b96366a775ed8f897b87d6cf8547e7ae28f0"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/BiliBiliComicsAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/BiliBiliComicsAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/BiliBiliComicsAds.conf",
+      "bytes": 6233,
+      "sha256": "43f979729075573c453bc7bde7e5433a959e9f25b4cb653564b7670127399976"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/BingSimplify.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/BingSimplify.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/BingSimplify.conf",
+      "bytes": 1315,
+      "sha256": "fc03c2292ed012b4bfe7dbc14199b4bfbe22a5906955984d09573b8d5abe17b3"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/CaiYunAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/CaiYunAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/CaiYunAds.conf",
+      "bytes": 3267,
+      "sha256": "8ba68f9affa24bf759d157d1ab88c9920e1ea25b2cfc36720d0966ceb9220842"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/CainiaoAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/CainiaoAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/CainiaoAds.conf",
+      "bytes": 3309,
+      "sha256": "c45b9717c6f474b652a2c8c49f0cb224c2592d222912932ffd127455c257ab6c"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/CheLaiLeAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/CheLaiLeAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/CheLaiLeAds.conf",
+      "bytes": 1820,
+      "sha256": "bed409e93bba662cb18bdccfa94623e8cdc77ceecc4f877a684dda20a8d083ff"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/ChinaUnicomAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/ChinaUnicomAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/ChinaUnicomAds.conf",
+      "bytes": 2292,
+      "sha256": "a751613faf1902f5f2a09f5a91d1359adcc270d5faaef22b433c2d89d47e26bc"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/FakeiOSAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/FakeiOSAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/FakeiOSAds.conf",
+      "bytes": 1101,
+      "sha256": "d729d6e6d3bdce404fa12b1f7b1d1c9042c060e29407de12fcb338c32604383f"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/GoofishAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/GoofishAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/GoofishAds.conf",
+      "bytes": 3423,
+      "sha256": "6112a98d133ccd602b6906e05c811f402ee1902a15b56397db9ebdde8d4321d1"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/KeepAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/KeepAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/KeepAds.conf",
+      "bytes": 2492,
+      "sha256": "a9d5ec743aed3d7fedc2874d3cefd2d623b7fcd290647f70cf7fec7ff83aa41e"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/MoJiWeatherAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/MoJiWeatherAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/MoJiWeatherAds.conf",
+      "bytes": 1643,
+      "sha256": "d0dad880065abc642de05d5d11923bbbdbcfd4cceb351dd5a93823761e967095"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/NeteaseAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/NeteaseAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/NeteaseAds.conf",
+      "bytes": 7127,
+      "sha256": "3d09d41ed78536e091612afd10fc471455ae82b274bbbf2f0b37399078e1677b"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/NeteaseMailAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/NeteaseMailAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/NeteaseMailAds.conf",
+      "bytes": 1629,
+      "sha256": "3b60dfb83759c90263db50310a947324c3760c1d513ba52eb6d0c9d39a12a949"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/QiShuiMusicAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/QiShuiMusicAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/QiShuiMusicAds.conf",
+      "bytes": 2259,
+      "sha256": "4754b7eeffc2c73b61b8abc23e4a2c3a51c3fdf63f1c374277c97625c6f0a150"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/RedditAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/RedditAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/RedditAds.conf",
+      "bytes": 957,
+      "sha256": "15a17fb23d210144cc3530af925fb20116d89cbfbaf96abd9f2a140a8d24f595"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/SmzdmAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/SmzdmAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/SmzdmAds.conf",
+      "bytes": 3282,
+      "sha256": "1a7b0c4a4c4bcb6ab474c447f2def2b526fa60fec36e21cf4d10fe327fe7ba33"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/TaoPiaoPiaoAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/TaoPiaoPiaoAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/TaoPiaoPiaoAds.conf",
+      "bytes": 2280,
+      "sha256": "c53eeb2abc507bf998e7823efa5547138d00665e44a6bd425ac245e2679830c8"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/TieBaAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/TieBaAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/TieBaAds.conf",
+      "bytes": 1932,
+      "sha256": "377b0d3379329cf29c52dc081c565b4d7efa190d5a54f2a035736297f412aaf4"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/WeChat.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/WeChat.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/WeChat.conf",
+      "bytes": 623,
+      "sha256": "5da780f3beb9ef3656af8249ebb3cbadfa0987971d1d3ba38f444ec1e8bc1707"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/WeiboAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/WeiboAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/WeiboAds.conf",
+      "bytes": 19438,
+      "sha256": "9cc47e68231ae05324f50eea108e0f1e5175fa2cfeeb6c8bae241db1556b038a"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/XiaoYuZhouAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/XiaoYuZhouAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/XiaoYuZhouAds.conf",
+      "bytes": 1436,
+      "sha256": "99fb43e0eab706d199cec15e265fd7e9da50125cc4f248d2ee714e98b688c181"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/Ximalaya.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/Ximalaya.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Ximalaya.conf",
+      "bytes": 4369,
+      "sha256": "b8f2f7b8b5de969969de29f9a41dfc94bd7bd1dee34f7225bc9b7db47fa41974"
+    },
+    {
+      "repo": "ddgksf2013/Rewrite",
+      "category": "APP 专项原始配置",
+      "path": "AdBlock/YoutubeAds.conf",
+      "site_path": "sources/ddgksf2013-rewrite/AdBlock/YoutubeAds.conf",
+      "source_url": "https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/YoutubeAds.conf",
+      "bytes": 1899,
+      "sha256": "480335f6327cd3a8e3c8dab4194bd7783f465dcc6f218a7b32c3aec89782b2b4"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/gist_githubusercontent_com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js",
+      "site_path": "sources/dependencies/gist_githubusercontent_com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js",
+      "source_url": "https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js",
+      "bytes": 122922,
+      "sha256": "6ba468eb994e3843d69563f8f3b31c2d63a62a68d60fc3a1fd61947c1546936f"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "source_url": "https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "bytes": 132973,
+      "sha256": "f98483d5f5017514f82502253c0db5ce2d4ffb7839887aa2cadc22666f5a7f12"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/adsense.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/adsense.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js",
+      "bytes": 2354,
+      "sha256": "171f97bb25c6cb29aeb134acdddca5c96b06e0e70a6e4f670914eba1c8f3b662"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/baidu-no-redirect.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/baidu-no-redirect.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js",
+      "bytes": 1191,
+      "sha256": "074cca3e35089a1471b5d7edcc1d200809e48930b404dee664655d6870aa6ad0"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/baidumap.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/baidumap.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/baidumap.js",
+      "bytes": 80453,
+      "sha256": "7cd5425ff0dcdd24d0fd42a4ca4a21b30c5d6edcd8052b3b7ca95c4722fcb500"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-json.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-json.js",
+      "bytes": 4959,
+      "sha256": "748ad16a92532bde2c439a8b9975f465381d20e24328cf2a58ff3a2a27328d84"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-proto.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/bilibili-proto.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-proto.js",
+      "bytes": 106934,
+      "sha256": "70fa7cf0e3390da24db93bcfbf0c81c2af17b16f99012b483783f046f62c476e"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/qidian.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/qidian.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js",
+      "bytes": 5761,
+      "sha256": "e599a063040ecb222ad5d4f8666157ef1ee31495aef6d87fb13453dce46f5c19"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/qq-news.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/qq-news.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js",
+      "bytes": 2283,
+      "sha256": "98b921f278eae3f4d99751a35c2b0c867b9716bd20713da14859f4033f8c7394"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/spotify-json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/spotify-json.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js",
+      "bytes": 381,
+      "sha256": "41cf1074770cdef3948baa12ff4a8db9045d1cac888714c8b7e69909eb531bc9"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/spotify-proto.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/spotify-proto.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js",
+      "bytes": 71920,
+      "sha256": "2e6850e888d092905c766f0bbedc4b4afb9a712330970cc1265105d7fb4995d0"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/spotify-qx-header.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/spotify-qx-header.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-qx-header.js",
+      "bytes": 135,
+      "sha256": "77267bc9bdcc8a2bc8eb1e70fffaeee0fb0c097a076bc9040b6c430acf051f3c"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-json.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
+      "bytes": 9971,
+      "sha256": "91040c0d5bf906357829d8df344a3bdce00b59e6c24f255e54a2ef7a46d04c69"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-proto.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/tieba-proto.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js",
+      "bytes": 97069,
+      "sha256": "6015d737870b6d89c38a0181479ed715e07d11b5a2c3746f96f95e25835e8610"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/vgtime.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/vgtime.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js",
+      "bytes": 292,
+      "sha256": "489f711e41734a6c9a8749d79923c3dc3930c63239fc7e97cb3e25a29c9eafd3"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/youtube.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/youtube.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/youtube.js",
+      "bytes": 105995,
+      "sha256": "366643a9bd121ed5d63003f1a5196e83c5b0ac5d427be63559f4770a32f52b39"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/app2smile/rules/master/js/zhihu.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/app2smile/rules/master/js/zhihu.js",
+      "source_url": "https://raw.githubusercontent.com/app2smile/rules/master/js/zhihu.js",
+      "bytes": 5643,
+      "sha256": "f37f82608f476d08652035f4a0c2ec5576923962f554e69f5f53ec9f1b80fa4d"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/master/AdBlock/TaoPiaoPiaoAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/master/AdBlock/TaoPiaoPiaoAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/TaoPiaoPiaoAds.conf",
+      "bytes": 2280,
+      "sha256": "c53eeb2abc507bf998e7823efa5547138d00665e44a6bd425ac245e2679830c8"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/AmapAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/AmapAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/AmapAds.conf",
+      "bytes": 3924,
+      "sha256": "d0c1caf909e3e9151ec890eb31bc14dc28b34c49d6c8a1ef42c147cd949564b3"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/Applet.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/Applet.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/Applet.conf",
+      "bytes": 2970,
+      "sha256": "6259647585e993f4b28897e8cba3b96366a775ed8f897b87d6cf8547e7ae28f0"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/BiliBiliComicsAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/BiliBiliComicsAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/BiliBiliComicsAds.conf",
+      "bytes": 6233,
+      "sha256": "43f979729075573c453bc7bde7e5433a959e9f25b4cb653564b7670127399976"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/BingSimplify.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/BingSimplify.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/BingSimplify.conf",
+      "bytes": 1315,
+      "sha256": "fc03c2292ed012b4bfe7dbc14199b4bfbe22a5906955984d09573b8d5abe17b3"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CaiYunAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CaiYunAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CaiYunAds.conf",
+      "bytes": 3267,
+      "sha256": "8ba68f9affa24bf759d157d1ab88c9920e1ea25b2cfc36720d0966ceb9220842"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CainiaoAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CainiaoAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/CainiaoAds.conf",
+      "bytes": 3309,
+      "sha256": "c45b9717c6f474b652a2c8c49f0cb224c2592d222912932ffd127455c257ab6c"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/ChinaUnicomAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/ChinaUnicomAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/ChinaUnicomAds.conf",
+      "bytes": 2292,
+      "sha256": "a751613faf1902f5f2a09f5a91d1359adcc270d5faaef22b433c2d89d47e26bc"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/FakeiOSAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/FakeiOSAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/FakeiOSAds.conf",
+      "bytes": 1101,
+      "sha256": "d729d6e6d3bdce404fa12b1f7b1d1c9042c060e29407de12fcb338c32604383f"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/GoofishAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/GoofishAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/GoofishAds.conf",
+      "bytes": 3423,
+      "sha256": "6112a98d133ccd602b6906e05c811f402ee1902a15b56397db9ebdde8d4321d1"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/KeepAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/KeepAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/KeepAds.conf",
+      "bytes": 2492,
+      "sha256": "a9d5ec743aed3d7fedc2874d3cefd2d623b7fcd290647f70cf7fec7ff83aa41e"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/MoJiWeatherAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/MoJiWeatherAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/MoJiWeatherAds.conf",
+      "bytes": 1643,
+      "sha256": "d0dad880065abc642de05d5d11923bbbdbcfd4cceb351dd5a93823761e967095"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseAds.conf",
+      "bytes": 7127,
+      "sha256": "3d09d41ed78536e091612afd10fc471455ae82b274bbbf2f0b37399078e1677b"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseMailAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseMailAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/NeteaseMailAds.conf",
+      "bytes": 1629,
+      "sha256": "3b60dfb83759c90263db50310a947324c3760c1d513ba52eb6d0c9d39a12a949"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/QiShuiMusicAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/QiShuiMusicAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/QiShuiMusicAds.conf",
+      "bytes": 2259,
+      "sha256": "4754b7eeffc2c73b61b8abc23e4a2c3a51c3fdf63f1c374277c97625c6f0a150"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/RedditAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/RedditAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/RedditAds.conf",
+      "bytes": 957,
+      "sha256": "15a17fb23d210144cc3530af925fb20116d89cbfbaf96abd9f2a140a8d24f595"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/SmzdmAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/SmzdmAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/SmzdmAds.conf",
+      "bytes": 3282,
+      "sha256": "1a7b0c4a4c4bcb6ab474c447f2def2b526fa60fec36e21cf4d10fe327fe7ba33"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/TieBaAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/TieBaAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/TieBaAds.conf",
+      "bytes": 1932,
+      "sha256": "377b0d3379329cf29c52dc081c565b4d7efa190d5a54f2a035736297f412aaf4"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/WeChat.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/WeChat.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/WeChat.conf",
+      "bytes": 623,
+      "sha256": "5da780f3beb9ef3656af8249ebb3cbadfa0987971d1d3ba38f444ec1e8bc1707"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/WeiboAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/WeiboAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/WeiboAds.conf",
+      "bytes": 19438,
+      "sha256": "9cc47e68231ae05324f50eea108e0f1e5175fa2cfeeb6c8bae241db1556b038a"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/XiaoYuZhouAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/XiaoYuZhouAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/XiaoYuZhouAds.conf",
+      "bytes": 1436,
+      "sha256": "99fb43e0eab706d199cec15e265fd7e9da50125cc4f248d2ee714e98b688c181"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/Ximalaya.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/Ximalaya.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/Ximalaya.conf",
+      "bytes": 4369,
+      "sha256": "b8f2f7b8b5de969969de29f9a41dfc94bd7bd1dee34f7225bc9b7db47fa41974"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/YoutubeAds.conf",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/YoutubeAds.conf",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Rewrite/refs/heads/master/AdBlock/YoutubeAds.conf",
+      "bytes": 1899,
+      "sha256": "480335f6327cd3a8e3c8dab4194bd7783f465dcc6f218a7b32c3aec89782b2b4"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/amap.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/amap.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amap.js",
+      "bytes": 11559,
+      "sha256": "936aaaf97cf69b8a5a25ba49303c0470a16ac48851e8bf58080ff9f129ff7c48"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/amdc.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/amdc.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amdc.js",
+      "bytes": 633,
+      "sha256": "8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/applet.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/applet.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/applet.js",
+      "bytes": 793,
+      "sha256": "0e2ffdd010b7f1ee38c526af5b7842f8fe3af89bf7ccd298596025baa4471855"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/bing.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/bing.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/bing.js",
+      "bytes": 783,
+      "sha256": "12ecdd295de9c427dbd0fbed9d356d70e6b5c0afe0105fb7f678484b4fc98ce5"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/cainiao_json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/cainiao_json.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/cainiao_json.js",
+      "bytes": 1805,
+      "sha256": "508701b04e3289d37d9baa649dce8a317329b21ebd4433872dc7906866bcdd5c"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caiyun_json.js",
+      "bytes": 2337,
+      "sha256": "1a165112aac24bf3830fa47b77d223d85beffdeaf91ee96eef05ab9429b36844"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/chelaile.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/chelaile.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/chelaile.js",
+      "bytes": 5360,
+      "sha256": "5ac31e6d28f37526c61efac734e34211a55e4afde5f5bb8bea94eaa543c04e95"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/keepStyle.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/keepStyle.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/keepStyle.js",
+      "bytes": 1779,
+      "sha256": "199783afcdd891bfd5fa298638e5806263521c14fd561ab6fda84efe5fe1e332"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/reddit.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/reddit.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/reddit.js",
+      "bytes": 7872,
+      "sha256": "9fba62bb23f38607739e135376c88c8276d4f26d7e1cac478ad7467cedd0590e"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/smzdm_json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/smzdm_json.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/smzdm_json.js",
+      "bytes": 2631,
+      "sha256": "cbcabf770447117a66358314950a4233448eeb86274ccfb96d148294d327eece"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/weibo_json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/weibo_json.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weibo_json.js",
+      "bytes": 15462,
+      "sha256": "1714a128eb1e2cc5c333e93bd66c860cbaa6a76bae0a3c9d15d5138fcd30b151"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/weibo_search_info.json",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/weibo_search_info.json",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weibo_search_info.json",
+      "bytes": 130,
+      "sha256": "5404166f304ace3d4749e18500d595acadaf5c913d13c5b196657a05149872ac"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/weibo_search_topic.json",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/weibo_search_topic.json",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weibo_search_topic.json",
+      "bytes": 378,
+      "sha256": "57881f577f253467924a5ce8698997bdc1dfaa102ca93c2538065d44a564215d"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js",
+      "bytes": 2236,
+      "sha256": "2b0cb0abf3cf9eaf16e45591c947d2ab1905c2fa5aa8c1ca56ac1f3b4cf19533"
+    },
+    {
+      "repo": "linked dependency",
+      "category": "脚本依赖原始归档",
+      "path": "dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/zhangshanggongjiao.js",
+      "site_path": "sources/dependencies/raw_githubusercontent_com/ddgksf2013/Scripts/refs/heads/master/zhangshanggongjiao.js",
+      "source_url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/zhangshanggongjiao.js",
+      "bytes": 989,
+      "sha256": "0a2ebfbf41ed4b7dbd39f4aa50616ac42cd59d5eb0baa026fc1b98e7a4f5a8bb"
+    },
+    {
+      "repo": "privacy-protection-tools/anti-AD",
+      "category": "广告与隐私规则",
+      "path": "anti-ad-surge.txt",
+      "site_path": "sources/anti-ad/anti-ad-surge.txt",
+      "source_url": "https://github.com/privacy-protection-tools/anti-AD/blob/master/anti-ad-surge.txt",
+      "bytes": 3412275,
+      "sha256": "64e7403db1eb7df5fe46da60acd8c0c1b98d91453958fa5b3c85e0e7716682a6"
+    }
   ],
+  "errors": [],
   "status_note": "上游已同步不代表 PopCat 兼容；未经转换和设备实测的文件仅作为原始归档。"
 }
