@@ -44,6 +44,19 @@ jobs:
         run: |
           node --check site/scripts/bilibili-json.js
           node --check site/scripts/bilibili-proto.js
+          node --check site/scripts/bilibili-splash.js
+          node - <<'NODE'
+          global.$request = { url: "https://app.bilibili.com/x/v2/splash/list?build=1", method: "GET" };
+          global.$done = (result) => {
+            if (result.status !== 200) throw new Error("splash response is not HTTP 200");
+            const body = JSON.parse(result.body);
+            if (body.code !== 0 || !Array.isArray(body.data.list) || body.data.list.length !== 0) {
+              throw new Error("splash response did not return a successful empty ad list");
+            }
+            console.log("[BILIBILI] splash request smoke test passed");
+          };
+          require("./site/scripts/bilibili-splash.js");
+          NODE
       - name: Build Apple Intelligence route module
         env:
           APPLE_INTELLIGENCE_POLICY: ${{ vars.APPLE_INTELLIGENCE_POLICY || '默认' }}
