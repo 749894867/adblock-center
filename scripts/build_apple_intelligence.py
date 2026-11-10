@@ -86,42 +86,41 @@ def extract_official_hosts(html: str) -> set[str]:
     parser.feed(html)
     text = " ".join(parser.parts)
 
-    heading = re.search(
-        r"Apple\s+Intelligence,\s*Siri,\s*and\s*Search",
-        text,
-        flags=re.IGNORECASE,
-    )
-    if not heading:
+    heading_pattern = r"Apple\s+Intelligence,\s*Siri,\s*and\s*Search"
+    headings = list(re.finditer(heading_pattern, text, flags=re.IGNORECASE))
+    if not headings:
         raise ValueError("Could not find Apple's Apple Intelligence host section")
 
-    end_positions = [
-        pos for marker in (
-            "HTTP proxy",
-            "Content Distribution Networks and DNS Resolution",
-            "Associated Domains",
-        )
-        if (pos := text.lower().find(marker.lower(), heading.end())) >= 0
-    ]
-    if not end_positions:
-        raise ValueError("Could not determine the end of Apple's host section")
-
-    section = text[heading.end():min(end_positions)]
-    hosts = {
-        match.group(0).lower().rstrip(".")
-        for match in HOST_RE.finditer(section)
-    }
-    hosts = {
-        host for host in hosts
-        if "." in host.lstrip("*.") and not host.endswith(".html")
-    }
-
     required = {"guzzoni.apple.com", "apple-relay.apple.com"}
-    if not required.issubset(hosts):
-        raise ValueError(
-            "Apple host section was found, but expected key hosts were missing"
-        )
-    return hosts
+    # Apple's support page may repeat the section title in its table of contents.
+    # Search from the last heading backward and choose the candidate containing
+    # the official host rows, rather than the short navigation entry.
+    for heading in reversed(headings):
+        end_positions = [
+            pos for marker in (
+                "HTTP proxy",
+                "Content Distribution Networks and DNS Resolution",
+            )
+            if (pos := text.lower().find(marker.lower(), heading.end())) >= 0
+        ]
+        if not end_positions:
+            continue
 
+        section = text[heading.end():min(end_positions)]
+        hosts = {
+            match.group(0).lower().rstrip(".")
+            for match in HOST_RE.finditer(section)
+        }
+        hosts = {
+            host for host in hosts
+            if "." in host.lstrip("*.") and not host.endswith(".html")
+        }
+        if required.issubset(hosts):
+            return hosts
+
+    raise ValueError(
+        "Apple Intelligence heading was found, but its official host rows could not be parsed"
+    )
 
 def load_hosts() -> tuple[set[str], str]:
     try:
