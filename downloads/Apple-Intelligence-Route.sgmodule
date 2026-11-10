@@ -2,9 +2,9 @@
 #!desc=每日同步 Apple 官方 Apple Intelligence、Siri 与 Private Cloud Compute 主机；不启用 MITM。
 #!category=Apple
 #
-# Generated: 2026-11-10T05:59:58+00:00
-# Source mode: fallback
-# Host count: 11
+# Generated: 2026-11-10T06:01:51+00:00
+# Source mode: live
+# Host count: 19
 # Policy group: 默认
 # Official source: https://support.apple.com/en-us/101555
 
@@ -12,6 +12,8 @@
 # Apple 官方文档：Apple Intelligence、Siri、Search 与 Private Cloud Compute
 DOMAIN-SUFFIX,smoot.apple.com,默认
 DOMAIN,api-siri-prod.apple.com,默认
+DOMAIN,app-site-association.cdn-apple.com,默认
+DOMAIN,app-site-association.networking.apple,默认
 DOMAIN,apple-relay.akamaized.net,默认
 DOMAIN,apple-relay.apple.com,默认
 DOMAIN,apple-relay.cloudflare.com,默认
@@ -21,5 +23,11 @@ DOMAIN,cp4.cloudflare.com,默认
 DOMAIN,gateway.icloud.com,默认
 DOMAIN,gspe1-ssl.ls.apple.com,默认
 DOMAIN,guzzoni.apple.com,默认
+DOMAIN,humb.apple.com,默认
+DOMAIN,idv-prod1.apple.com,默认
+DOMAIN,idv.cdn-apple.com,默认
+DOMAIN,iphonesubmissions.apple.com,默认
+DOMAIN,pos-device.apple.com,默认
+DOMAIN,smp-device-content.apple.com,默认
 
 # 不配置 [MITM]：Apple 官方建议不要对这些加密连接进行 HTTPS 内容检查。
