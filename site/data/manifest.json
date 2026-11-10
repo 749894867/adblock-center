@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:33:24+00:00",
+  "generated_at": "2026-11-10T06:35:27+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1051,18 +1051,54 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-10T06:33:27+00:00",
+    "generated_at": "2026-11-10T06:35:30+00:00",
     "rule_count": 223480,
     "size_bytes": 7723840,
     "max_safe_bytes": 8000000,
     "format": "Surge/Shadowrocket RULE-SET text; policy is selected in the client"
   },
+  "bilibili": {
+    "supported": true,
+    "requires_https_decryption": true,
+    "mitm_hosts": [
+      "app.bilibili.com",
+      "grpc.biliapi.net",
+      "api.bilibili.com"
+    ],
+    "scripts": [
+      {
+        "path": "scripts/bilibili-json.js",
+        "url": "https://749894867.github.io/adblock-center/scripts/bilibili-json.js",
+        "source": "app2smile/rules",
+        "source_path": "js/bilibili-json.js",
+        "sha256": "575bd5ea47c44386468fa9f6d76b4e359078af979e49290a6c9efac3377b5f52",
+        "size_bytes": 4971
+      },
+      {
+        "path": "scripts/bilibili-proto.js",
+        "url": "https://749894867.github.io/adblock-center/scripts/bilibili-proto.js",
+        "source": "app2smile/rules",
+        "source_path": "js/bilibili-proto.js",
+        "sha256": "70fa7cf0e3390da24db93bcfbf0c81c2af17b16f99012b483783f046f62c476e",
+        "size_bytes": 106934
+      }
+    ],
+    "coverage": [
+      "开屏页",
+      "推荐页",
+      "底部 Tab",
+      "视频详情页",
+      "动态/UP 主推荐",
+      "弹幕广告接口"
+    ],
+    "note": "基于 app2smile/rules 的 Surge 模块与脚本适配 PopCat；需要用户安装并完全信任 HTTPS 解密证书。"
+  },
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T06:33:27+00:00",
+    "generated_at": "2026-11-10T06:35:30+00:00",
     "rule_count": 223480,
-    "size_bytes": 1712,
+    "size_bytes": 2505,
     "shard_count": 16,
     "largest_shard_bytes": 500058,
     "shards": [
@@ -1181,7 +1217,7 @@
     "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   },
   "apple_intelligence": {
-    "generated_at": "2026-11-10T06:33:27+00:00",
+    "generated_at": "2026-11-10T06:35:30+00:00",
     "source_url": "https://support.apple.com/en-us/101555",
     "source_mode": "live",
     "policy_group": "默认",

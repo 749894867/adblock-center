@@ -1,12 +1,12 @@
-#!name=墨鱼广告净化 · 每日自动更新
-#!desc=固定 HTTPS 订阅入口；规则分片每日同步更新，无需重复导入。
+#!name=墨鱼广告净化 · 海外代理模式
+#!desc=海外代理模式下生效；含通用广告规则与 Bilibili 响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。
 #!category=AdBlock
 #
-# Generated: 2026-11-10T06:33:27+00:00
+# Generated: 2026-11-10T06:35:30+00:00
 # Rules: 223480
 # Remote rule shards: 16
-# The module stays small; each external list contains only PopCat-supported domain rule types.
-# Update this module in PopCat to download refreshed external rule lists.
+# External lists contain PopCat-supported domain rule types only.
+# Update this module in PopCat to refresh remote rule lists and Bilibili scripts.
 
 [Rule]
 RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-01.list,REJECT
@@ -25,3 +25,12 @@ RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-13.list,REJECT
 RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-14.list,REJECT
 RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-15.list,REJECT
 RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-16.list,REJECT
+DOMAIN-SUFFIX,cm.bilibili.com,REJECT
+URL-REGEX,^https?:\\/\\/api\\.bilibili\\.com\\/x\\/v2\\/dm\\/ad,REJECT
+
+[MITM]
+hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com
+
+[Script]
+bili_json = type=http-response,pattern=^https:\\/\\/app\\.bilibili\\.com\\/x\\/(v2\\/(splash\\/(list|show)|feed\\/index\\?)|resource\\/show\\/tab\\/v2),requires-body=1,timeout=25,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-json.js
+bili_proto = type=http-response,pattern=^https:\\/\\/(grpc\\.biliapi\\.net|app\\.bilibili\\.com)\\/bilibili\\.app\\.(viewunite\\.v1\\.View\\/View|dynamic\\.v2\\.Dynamic\\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-proto.js
