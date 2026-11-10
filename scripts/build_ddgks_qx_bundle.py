@@ -25,7 +25,8 @@ FILTER_RAW = "https://raw.githubusercontent.com/ddgksf2013/Filter/master/"
 # Explicitly omitted: upstream warns that anti-ip is not recommended; the WeChat
 # list itself says it should not be used outside Surge; TikTok was removed from
 # the current QX profile because it conflicts with Toutiao-related traffic.
-FILTER_SKIP = {"anti-ip-attribution.list", "WeChat.list", "TikTok.list"}
+FILTER_SKIP = {"anti-ip-attribution.list", "TikTok.list"}
+FILTER_SURGE_ONLY_WECHAT_URL = "https://raw.githubusercontent.com/ddgksf2013/Filter/master/WeChat.list"
 FILTER_POLICY = {
     "Unbreak.list": "direct",
     "BlockiOSUpdate.list": "reject",
@@ -237,12 +238,16 @@ def build_filter_lines(profile: str, filter_tree: dict) -> list[str]:
             continue
         url = first_url(line)
         filename = url.split("?", 1)[0].split("#", 1)[0].rsplit("/", 1)[-1]
-        if filename in FILTER_SKIP or url in seen:
+        if filename in FILTER_SKIP or url == FILTER_SURGE_ONLY_WECHAT_URL or url in seen:
             continue
         options = parse_options(line)
         tag = options.get("tag", filename.rsplit(".", 1)[0])
         img = options.get("img-url", "")
-        policy = rule_policy(url)
+        source_policy = options.get("force-policy", "").strip().lower()
+        if source_policy in {"direct", "reject", "proxy"}:
+            policy = "PROXY" if source_policy == "proxy" else source_policy
+        else:
+            policy = rule_policy(url)
         lines.append(make_filter_line(
             url, tag, policy,
             opt_parser=options.get("opt-parser", "true"),
@@ -265,7 +270,7 @@ def build_filter_lines(profile: str, filter_tree: dict) -> list[str]:
         if "/" in path or not path.lower().endswith(".list"):
             continue
         filename = path.rsplit("/", 1)[-1]
-        if filename in FILTER_SKIP:
+        if filename in FILTER_SKIP or filename == "WeChat.list":
             continue
         url = FILTER_RAW + path
         if url in seen:
@@ -297,7 +302,7 @@ def main() -> None:
         "# Auto-generated daily from ddgksf2013/ddgksf2013 README + current QX profile + ddgksf2013/Filter.",
         "# This is a rules resource bundle, NOT a full proxy profile; keep your own servers/policies.",
         "# Original rules/scripts remain hosted by their respective authors and are fetched by QX every 24 hours.",
-        "# QX-incompatible .sgmodule/.snippet, deprecated rows, anti-ip-attribution and WeChat.list are excluded.",
+        "# QX-incompatible .sgmodule/.snippet, deprecated rows, anti-ip-attribution, TikTok and the Surge-only Filter/WeChat.list are excluded.",
         "# The current profile's temporary server subscription and author-specific node groups are not copied.",
         "",
         "[rewrite_remote]",
