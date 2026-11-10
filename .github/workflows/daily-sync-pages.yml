@@ -63,6 +63,8 @@ jobs:
         run: python scripts/build_apple_intelligence.py
 
       - name: Build Quantumult X rule bundle
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/build_ddgks_qx_bundle.py
 
       - name: Commit synchronized rules and subscription
