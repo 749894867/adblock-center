@@ -74,13 +74,9 @@ def convert_qx_simple_block(line: str) -> str | None:
         kind = "DOMAIN" if host_match.group(1).lower() == "host" else "DOMAIN-SUFFIX"
         return f"{kind},{host_match.group(2)},REJECT"
 
-    # QX url-reject rules become URL matching rules. Response-body scripts and
-    # JSON rewrites are NOT converted here because they need client-specific code.
-    url_match = re.match(r"^(.*?)\s+url\s+reject(?:-200)?\s*$", value, re.IGNORECASE)
-    if url_match:
-        pattern = url_match.group(1).strip()
-        if pattern.startswith("^") and len(pattern) > 4:
-            return f"URL-REGEX,{pattern},REJECT"
+    # PopCat's standalone external RULE-SET format does not support URL-REGEX.
+    # Keep QX URL/path rejection rules in the source archive until they can be
+    # converted into a compatible [URL Rewrite] module section.
     return None
 
 
