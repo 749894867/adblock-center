@@ -18,19 +18,18 @@
 
 ## 规则转换范围
 
-当前自动编译的规则类型为：
+当前自动编译进入 PopCat 外部 `RULE-SET` 的规则类型为：
 
 - `DOMAIN`
 - `DOMAIN-SUFFIX`
 - `DOMAIN-KEYWORD`
-- `URL-REGEX`
 
-上游列表中没有明确指定策略的广告规则会统一补上 `REJECT`；明确为 DIRECT/PROXY 等非拦截动作的规则不会并入订阅。QX 简单的 `host` / `host-suffix` / `url reject-200` 规则会尝试转换为对应路由规则。
+每个远程规则分片控制在约 500 KB，并通过独立 `RULE-SET` 引用。上游列表中没有明确指定策略的广告规则会统一补上 `REJECT`；明确为 DIRECT/PROXY 等非拦截动作的规则不会并入订阅。QX 简单的 `host` / `host-suffix` 规则会尝试转换为对应域名规则。`URL-REGEX` 不属于 PopCat 外部规则列表支持的类型，因此不会放入远程分片。
 
 ## 暂不自动转换的内容
 
 Quantumult X 的 `script-response-body`、`jsonjq-response-body`、脚本参数、MITM 相关配置不能直接等同于普通域名拦截规则，当前仅保留原始归档，等待单独适配和实测。
-- 墨鱼 Rewrite 中的 `.conf` 多数是 Quantumult X 重写配置，不是可直接放进 Surge `[Script]` 的 JavaScript 文件；不能把它们作为 `script-path` 使用。需要先按客户端语法转换，并单独验证脚本兼容性。IP 规则及复杂 AND/OR 规则也暂不自动并入，以降低误拦风险。
+- 墨鱼 Rewrite 中的 `.conf` 多数是 Quantumult X 重写配置，不是可直接放进 Surge `[Script]` 的 JavaScript 文件；不能把它们作为 `script-path` 使用。需要先按客户端语法转换，并单独验证脚本兼容性。IP 规则、URL 路径正则及复杂 AND/OR 规则也暂不自动并入，以降低误拦风险。
 
 ## Apple Intelligence
 
