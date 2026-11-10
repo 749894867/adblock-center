@@ -206,9 +206,9 @@ def build_rewrite_lines(readme: str, profile: str) -> list[str]:
         for url, label in row["links"]:
             url = url.strip()
             path = url.split("#", 1)[0].split("?", 1)[0].lower()
-            ext_match = re.search(r"\.(conf|js)$", path)
+            ext_match = re.search(r"\.(conf|js|snippet)$", path)
             if not ext_match:
-                # .sgmodule/.snippet are other-client or standalone snippets.
+                # .sgmodule is a different client module format; QX .snippet files are supported resources.
                 continue
             if url in seen or url in OBSOLETE_ALIAS_URLS:
                 continue
@@ -302,7 +302,7 @@ def main() -> None:
         "# Auto-generated daily from ddgksf2013/ddgksf2013 README + current QX profile + ddgksf2013/Filter.",
         "# This is a rules resource bundle, NOT a full proxy profile; keep your own servers/policies.",
         "# Original rules/scripts remain hosted by their respective authors and are fetched by QX every 24 hours.",
-        "# QX-incompatible .sgmodule/.snippet, deprecated rows, anti-ip-attribution, TikTok and the Surge-only Filter/WeChat.list are excluded.",
+        "# QX-incompatible .sgmodule, deprecated rows, anti-ip-attribution, TikTok and the Surge-only Filter/WeChat.list are excluded.",
         "# The current profile's temporary server subscription and author-specific node groups are not copied.",
         "",
         "[rewrite_remote]",
