@@ -26,7 +26,7 @@ MAX_FILE_BYTES = 15_000_000
 USER_AGENT = "AdBlock-Center-Upstream-Sync/1.0"
 
 SOURCES = [
-    {"id":"ddgksf2013-rewrite","name":"墨鱼 Rewrite","repo":"ddgksf2013/Rewrite","branch":"master","prefixes":["AdBlock/"],"extensions":[".conf",".js",".snippet",".sgmodule",".list"],"category":"APP 专项原始配置"},
+    {"id":"ddgksf2013-rewrite","name":"墨鱼 Rewrite","repo":"ddgksf2013/Rewrite","branch":"master","prefixes":["AdBlock/"],"extensions":[".conf",".js",".snippet",".sgmodule",".list",".json",".txt"],"category":"APP 专项原始配置"},
     {"id":"cats-team","name":"Cats-Team AdRules","repo":"Cats-Team/AdRules","branch":"main","exact":["adrules-surge.conf"],"category":"通用广告规则"},
     {"id":"awavenue","name":"AWAvenue","repo":"TG-Twilight/AWAvenue-Ads-Rule","branch":"main","exact":["Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"],"category":"通用广告规则"},
     {"id":"anti-ad","name":"anti-AD","repo":"privacy-protection-tools/anti-AD","branch":"master","exact":["anti-ad-surge.txt"],"category":"广告与隐私规则"},
