@@ -22,7 +22,7 @@ SOURCE_ROOT = SITE / "sources"
 MANIFEST = SITE / "data" / "manifest.json"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 MAX_FILES_PER_SOURCE = 5000
-MAX_FILE_BYTES = 2_000_000
+MAX_FILE_BYTES = 15_000_000
 USER_AGENT = "AdBlock-Center-Upstream-Sync/1.0"
 
 SOURCES = [
