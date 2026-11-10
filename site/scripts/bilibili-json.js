@@ -19,15 +19,20 @@ if (!body.data) {
     console.log(`body:${$response.body}`);
     $notification.post(notifyTitle, url, "data字段错误");
 } else {
-    if (url.includes("x/v2/splash")) {
-        console.log('开屏页' + (url.includes("splash/show") ? 'show' : 'list'));
-        if (!body.data.show) {
-            // 有时候返回的数据没有show字段
-            console.log('数据无show字段');
-        } else {
-            delete body.data.show;
-            console.log('成功');
-        }
+    if (url.includes("x/v2/splash/list")) {
+        const splash = body.data;
+        if (Array.isArray(splash.list)) splash.list = [];
+        if (Array.isArray(splash.keep_ids)) splash.keep_ids = [];
+        if (typeof splash.max_time === "number") splash.max_time = 0;
+        if (typeof splash.min_interval === "number") splash.min_interval = 31536000;
+        if (typeof splash.pull_interval === "number") splash.pull_interval = 31536000;
+        console.log("已清空开屏广告列表");
+    } else if (url.includes("x/v2/splash/brand/list")) {
+        if (Array.isArray(body.data.show)) body.data.show = [];
+        console.log("已清除开屏品牌图默认展示项");
+    } else if (url.includes("x/v2/splash")) {
+        if (Array.isArray(body.data.show)) body.data.show = [];
+        console.log("已清除开屏展示项");
     } else if (url.includes("resource/show/tab/v2")) {
         console.log('tab修改');
         // 顶部右上角

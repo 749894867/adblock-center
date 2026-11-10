@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:59:52+00:00",
+  "generated_at": "2026-11-10T07:02:30+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1096,7 +1096,7 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-10T06:59:53+00:00",
+    "generated_at": "2026-11-10T07:02:32+00:00",
     "rule_count": 223482,
     "size_bytes": 7723883,
     "max_safe_bytes": 8000000,
@@ -1107,6 +1107,7 @@
     "requires_https_decryption": true,
     "mitm_hosts": [
       "app.bilibili.com",
+      "app.biliapi.net",
       "grpc.biliapi.net",
       "api.bilibili.com"
     ],
@@ -1116,8 +1117,8 @@
         "url": "https://749894867.github.io/adblock-center/scripts/bilibili-json.js",
         "source": "app2smile/rules",
         "source_path": "js/bilibili-json.js",
-        "sha256": "575bd5ea47c44386468fa9f6d76b4e359078af979e49290a6c9efac3377b5f52",
-        "size_bytes": 4971
+        "sha256": "f33c34faf309078d65a7d5c50e344f34724b6ad270ae0705bf233bb5d0c7b2d0",
+        "size_bytes": 5456
       },
       {
         "path": "scripts/bilibili-proto.js",
@@ -1126,10 +1127,19 @@
         "source_path": "js/bilibili-proto.js",
         "sha256": "70fa7cf0e3390da24db93bcfbf0c81c2af17b16f99012b483783f046f62c476e",
         "size_bytes": 106934
+      },
+      {
+        "path": "scripts/bilibili-splash.js",
+        "url": "https://749894867.github.io/adblock-center/scripts/bilibili-splash.js",
+        "source": "local PopCat adaptation",
+        "source_path": "scripts/vendor/bilibili-splash.js",
+        "sha256": "b0b8484cf1b6deb2d8d6c84b3f466d898f021fe115501d8a658f5d022f298c59",
+        "size_bytes": 947
       }
     ],
     "coverage": [
-      "开屏页",
+      "开屏广告请求本地空响应与响应兜底",
+      "开屏品牌默认展示项",
       "推荐页",
       "底部 Tab",
       "视频详情页",
@@ -1141,9 +1151,9 @@
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T06:59:53+00:00",
+    "generated_at": "2026-11-10T07:02:32+00:00",
     "rule_count": 223482,
-    "size_bytes": 2469,
+    "size_bytes": 2793,
     "shard_count": 16,
     "largest_shard_bytes": 500058,
     "shards": [
@@ -1263,7 +1273,7 @@
     "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   },
   "apple_intelligence": {
-    "generated_at": "2026-11-10T06:59:54+00:00",
+    "generated_at": "2026-11-10T07:02:32+00:00",
     "source_url": "https://support.apple.com/en-us/101555",
     "source_mode": "live",
     "policy_group": "默认",

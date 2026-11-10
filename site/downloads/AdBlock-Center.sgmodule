@@ -1,12 +1,12 @@
 #!name=墨鱼广告净化 · 海外代理模式
-#!desc=海外代理模式下生效；含通用广告规则与 Bilibili 响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。
+#!desc=海外代理模式下生效；包含通用广告规则与 Bilibili 开屏、首页及视频响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。
 #!category=AdBlock
 #
-# Generated: 2026-11-10T06:59:53+00:00
+# Generated: 2026-11-10T07:02:32+00:00
 # Rules: 223482
 # Remote rule shards: 16
 # External lists contain PopCat-supported domain rule types only.
-# Update this module in PopCat to refresh remote rule lists and Bilibili scripts.
+# Update this module in PopCat to refresh remote rule lists and scripts.
 
 [Rule]
 RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-01.list,REJECT
@@ -29,8 +29,9 @@ DOMAIN-SUFFIX,cm.bilibili.com,REJECT
 URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/ad,REJECT
 
 [MITM]
-hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com
+hostname = %APPEND% app.bilibili.com, app.biliapi.net, grpc.biliapi.net, api.bilibili.com
 
 [Script]
-bili_json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2),requires-body=1,timeout=25,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-json.js
-bili_proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-proto.js
+bili_splash = type=http-request,pattern=^https:\/\/(app\.bilibili\.com|app\.biliapi\.net)(?::443)?\/x\/v2\/splash\/list(?:\?[^#]*)?$,timeout=10,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-splash.js
+bili_json = type=http-response,pattern=^https:\/\/(app\.bilibili\.com|app\.biliapi\.net)\/x\/(v2\/(splash\/(list|show|event\/list2|brand\/list)|feed\/index\?)|resource\/show\/tab\/v2),requires-body=1,timeout=25,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-json.js
+bili_proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com|app\.biliapi\.net)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path=https://749894867.github.io/adblock-center/scripts/bilibili-proto.js
