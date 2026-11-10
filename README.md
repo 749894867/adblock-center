@@ -1,44 +1,47 @@
 # AdBlock Center / 墨鱼去广告规则中心
 
-一个面向 PopCat 的规则汇集、审查、构建与更新站点。
+一个面向 PopCat 的广告拦截规则订阅。用户只需导入一次固定 HTTPS 地址，GitHub Actions 每天同步上游并重建该地址背后的规则文件。
 
-## 项目目标
+## 固定订阅地址
 
-- 尽可能完整地归档上游通用广告规则和 APP 专项规则。
-- 分开保存原始规则与经过 PopCat 兼容性审查的模块。
-- Apple Intelligence 使用独立分流片段，默认策略名为「默认」。
-- 每天自动检查上游变更，记录来源、文件、SHA 和更新时间。
-- 不将 QX/Surge 原始指令误标为 PopCat 兼容规则。
+`https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule`
 
-## 状态定义
+固定文件名和 URL 不变。每日更新时，服务器覆盖同一文件；客户端通过自己的订阅更新/刷新机制获取最新规则，不需要删除后重新导入。
 
-| 状态 | 含义 |
-|---|---|
-| 上游已同步 | 已从原始上游获取并归档 |
-| 待转换 | 原始语法尚未适配 PopCat |
-| 待实测 | 已完成转换但尚未在真实设备验证 |
-| PopCat 已验证 | 已经在目标 PopCat 版本完成实际验证 |
-| 已发布 | 已进入公开下载目录 |
+## 更新机制
 
-同步成功不代表兼容性通过。
+- 每天 04:00 UTC（新加坡时间 12:00）执行上游同步。
+- `scripts/sync_sources.py` 抓取并归档上游文件。
+- `scripts/build_subscription.py` 从原始文件中提取可安全表达的域名/URL 拦截规则，统一生成一个 Surge 风格模块。
+- GitHub Actions 提交新内容并部署 GitHub Pages。
+- 订阅地址长期固定：`/downloads/AdBlock-Center.sgmodule`。
 
+## 规则转换范围
 
-## 本地目录
+当前自动编译的规则类型为：
 
-- `index.html`：规则中心首页
-- `downloads/`：公开下载模块
-- `site/sources/`：上游原始文件归档
-- `site/data/manifest.json`：每日更新清单
-- `scripts/sync_sources.py`：上游同步脚本
-- `.github/workflows/daily-sync-pages.yml`：每日同步和 Pages 部署
+- `DOMAIN`
+- `DOMAIN-SUFFIX`
+- `DOMAIN-KEYWORD`
+- `URL-REGEX`
+
+上游列表中没有明确指定策略的广告规则会统一补上 `REJECT`；明确为 DIRECT/PROXY 等非拦截动作的规则不会并入订阅。QX 简单的 `host` / `host-suffix` / `url reject-200` 规则会尝试转换为对应路由规则。
+
+## 暂不自动转换的内容
+
+Quantumult X 的 `script-response-body`、`jsonjq-response-body`、脚本参数、MITM 相关配置不能直接等同于普通域名拦截规则，当前仅保留原始归档，等待单独适配和实测。IP 规则及复杂 AND/OR 规则也暂不自动并入，以降低误拦风险。
+
+## Apple Intelligence
+
+继续独立维护，不合并进广告订阅：
+
+`https://749894867.github.io/adblock-center/downloads/Apple-Intelligence-Route.sgmodule`
+
+策略组名称为「默认」，需与 PopCat 中实际存在的策略名称一致。
 
 ## 重要说明
 
-1. 项目追求高拦截覆盖率，但无法保证拦截所有服务端动态广告。
-2. 高风险/功能性请求阻断会单独标注，避免误将失效或过期规则作为已验证规则。
-3. Apple Intelligence 分流片段不启用 HTTPS MITM；策略组名称必须与本地客户端配置一致。
-4. 原始上游规则可能包含 Quantumult X 专有语法。未经转换和实测，不应直接导入 PopCat。
-
-## 每日更新
-
-GitHub Actions 每天 04:00 UTC（新加坡时间 12:00）检查上游资源并部署网站。也可在 Actions 页面手动运行。
+- 同步成功不等于所有广告都能拦截，也不等于每个 APP 都已实测。
+- 极限拦截可能影响登录、搜索、定位、播放或支付功能。
+- 上游原始文件保留来源和 SHA256，便于审查及回滚。
+- PopCat 是否自动刷新远程模块由客户端自身设置决定；服务器端固定地址会每日更新。
