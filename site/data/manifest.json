@@ -1,9 +1,52 @@
 {
   "generated_at": null,
-  "sources": [],
+  "sources": [
+    {
+      "id": "ddgksf2013-rewrite",
+      "name": "墨鱼 Rewrite",
+      "repo": "ddgksf2013/Rewrite",
+      "file_count": 0
+    },
+    {
+      "id": "muyu-linked-dependencies",
+      "name": "配置引用的 GitHub/Gist 脚本依赖",
+      "repo": "多来源",
+      "file_count": 0
+    },
+    {
+      "id": "cats-team",
+      "name": "Cats-Team AdRules",
+      "repo": "Cats-Team/AdRules",
+      "file_count": 0
+    },
+    {
+      "id": "awavenue",
+      "name": "AWAvenue",
+      "repo": "TG-Twilight/AWAvenue-Ads-Rule",
+      "file_count": 0
+    },
+    {
+      "id": "anti-ad",
+      "name": "anti-AD",
+      "repo": "privacy-protection-tools/anti-AD",
+      "file_count": 0
+    },
+    {
+      "id": "blackmatrix7",
+      "name": "Blackmatrix7 Advertising",
+      "repo": "blackmatrix7/ios_rule_script",
+      "file_count": 0
+    },
+    {
+      "id": "app2smile",
+      "name": "app2smile rules",
+      "repo": "app2smile/rules",
+      "file_count": 0
+    }
+  ],
   "files": [],
   "errors": [
-    "首次 GitHub Actions 同步尚未运行。"
+    "首次自动同步尚未运行。"
   ],
-  "note": "上游已同步不代表 PopCat 兼容；转换和实测状态单独记录。"
+  "status_note": "上游已同步不代表 PopCat 兼容；未经转换和设备实测的文件仅作为原始归档。"
 }
