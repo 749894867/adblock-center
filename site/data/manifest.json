@@ -1,0 +1,9 @@
+{
+  "generated_at": null,
+  "sources": [],
+  "files": [],
+  "errors": [
+    "首次 GitHub Actions 同步尚未运行。"
+  ],
+  "note": "上游已同步不代表 PopCat 兼容；转换和实测状态单独记录。"
+}
