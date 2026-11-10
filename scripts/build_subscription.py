@@ -339,14 +339,14 @@ def main() -> None:
     # app.bilibili.com and grpc.biliapi.net are handled by the response scripts below.
     module_lines.extend([
         "DOMAIN-SUFFIX,cm.bilibili.com,REJECT",
-        "URL-REGEX,^https?:\\\\/\\\\/api\\\\.bilibili\\\\.com\\\\/x\\\\/v2\\\\/dm\\\\/ad,REJECT",
+        r"URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/ad,REJECT",
         "",
         "[MITM]",
         "hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com",
         "",
         "[Script]",
-        f"bili_json = type=http-response,pattern=^https:\\\\/\\\\/app\\\\.bilibili\\\\.com\\\\/x\\\\/(v2\\\\/(splash\\\\/(list|show)|feed\\\\/index\\\\?)|resource\\\\/show\\\\/tab\\\\/v2),requires-body=1,timeout=25,script-path={bilibili_scripts[0]['url']}",
-        f"bili_proto = type=http-response,pattern=^https:\\\\/\\\\/(grpc\\\\.biliapi\\\\.net|app\\\\.bilibili\\\\.com)\\\\/bilibili\\\\.app\\\\.(viewunite\\\\.v1\\\\.View\\\\/View|dynamic\\\\.v2\\\\.Dynamic\\\\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path={bilibili_scripts[1]['url']}",
+        rf"bili_json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2),requires-body=1,timeout=25,script-path={bilibili_scripts[0]['url']}",
+        rf"bili_proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path={bilibili_scripts[1]['url']}",
     ])
     module_text = "\n".join(module_lines) + "\n"
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
