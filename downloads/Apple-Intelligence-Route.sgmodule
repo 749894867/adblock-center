@@ -1,21 +1,25 @@
-#!name=Apple Intelligence 优先分流（独立）
-#!desc=将 Apple Intelligence、Siri 与相关 Apple 服务主机交由策略组「默认」。不包含 MITM。
+#!name=Apple Intelligence / Siri 分流（每日自动更新）
+#!desc=每日同步 Apple 官方 Apple Intelligence、Siri 与 Private Cloud Compute 主机；不启用 MITM。
 #!category=Apple
+#
+# Generated: 2026-11-10T05:59:58+00:00
+# Source mode: fallback
+# Host count: 11
+# Policy group: 默认
+# Official source: https://support.apple.com/en-us/101555
 
 [Rule]
-DOMAIN-SUFFIX,gateway.icloud.com,默认
-DOMAIN-SUFFIX,apple-relay.apple.com,默认
-DOMAIN-SUFFIX,apple-relay.fastly-edge.com,默认
-DOMAIN-SUFFIX,apple-relay.cloudflare.com,默认
-DOMAIN-SUFFIX,guzzoni.apple.com,默认
-DOMAIN-SUFFIX,cp4.cloudflare.com,默认
-DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,默认
+# Apple 官方文档：Apple Intelligence、Siri、Search 与 Private Cloud Compute
 DOMAIN-SUFFIX,smoot.apple.com,默认
-DOMAIN-SUFFIX,apple-relay.akamaized.net,默认
-DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,默认
-DOMAIN-SUFFIX,api-siri-prod.apple.com,默认
+DOMAIN,api-siri-prod.apple.com,默认
+DOMAIN,apple-relay.akamaized.net,默认
+DOMAIN,apple-relay.apple.com,默认
+DOMAIN,apple-relay.cloudflare.com,默认
+DOMAIN,apple-relay.fastly-edge.com,默认
+DOMAIN,apple-relay.mask.apple-dns.net,默认
+DOMAIN,cp4.cloudflare.com,默认
+DOMAIN,gateway.icloud.com,默认
+DOMAIN,gspe1-ssl.ls.apple.com,默认
+DOMAIN,guzzoni.apple.com,默认
 
-# 注意：
-# 1. 「默认」必须是客户端中真实存在且出口符合预期的策略组。
-# 2. 本文件仅提供路由，不对 Apple 域名配置 HTTPS MITM。
-# 3. 此模块尚未在用户的 PopCat 版本/节点上完成实测。
+# 不配置 [MITM]：Apple 官方建议不要对这些加密连接进行 HTTPS 内容检查。

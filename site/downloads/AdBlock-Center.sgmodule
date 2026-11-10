@@ -2,7 +2,7 @@
 #!desc=固定 HTTPS 订阅入口；规则分片每日同步更新，无需重复导入。
 #!category=AdBlock
 #
-# Generated: 2026-11-10T05:55:48+00:00
+# Generated: 2026-11-10T05:59:57+00:00
 # Rules: 223591
 # Remote rule shards: 4
 # The module stays small; each referenced RULE-SET is a separate plain-text list.
