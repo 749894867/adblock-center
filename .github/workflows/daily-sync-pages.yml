@@ -1,6 +1,8 @@
 name: Daily upstream sync and Pages deploy
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 04:00 UTC = 12:00 Asia/Singapore
     - cron: "0 4 * * *"
