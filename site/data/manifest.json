@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:14:12+00:00",
+  "generated_at": "2026-11-10T05:27:42+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1030,10 +1030,19 @@
   ],
   "errors": [],
   "status_note": "上游已同步不代表 PopCat 兼容；未经转换和设备实测的文件仅作为原始归档。",
+  "single_rule_set": {
+    "path": "rules/AdBlock-Center.list",
+    "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
+    "generated_at": "2026-11-10T05:27:45+00:00",
+    "rule_count": 223591,
+    "size_bytes": 7955339,
+    "max_safe_bytes": 8000000,
+    "format": "Surge/Shadowrocket RULE-SET text; policy is selected in the client"
+  },
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T05:14:14+00:00",
+    "generated_at": "2026-11-10T05:27:45+00:00",
     "rule_count": 223591,
     "size_bytes": 740,
     "shard_count": 4,
@@ -1070,8 +1079,8 @@
     "files_contributing_rules": 23,
     "rule_types": {
       "DOMAIN-SUFFIX": 223195,
-      "URL-REGEX": 111,
       "DOMAIN-KEYWORD": 282,
+      "URL-REGEX": 111,
       "DOMAIN": 3
     },
     "source_rule_counts": {
