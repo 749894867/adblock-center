@@ -29,12 +29,19 @@
 
 ## Bilibili 专项净化
 
-广告模块已集成 app2smile 的 Surge 格式 Bilibili 规则和两份响应脚本，覆盖开屏页、推荐页、底部 Tab、视频详情页，以及 gRPC 动态 / UP 主推荐内容；另针对弹幕广告接口增加路径拦截。脚本文件由本仓库每日同步并通过固定 GitHub Pages 地址提供，避免模块依赖第三方脚本地址临时失效。
+广告订阅除 22 万余条通用域名拦截规则外，还包含 app2smile 的 Bilibili JSON / Protobuf 净化脚本，以及一个 PopCat 专用开屏请求脚本。其他 APP 的专用响应体脚本尚未接入，因此不能把整个模块描述成已经集成所有 APP 的深度净化。
 
-**Bilibili 响应净化必须启用 PopCat 的 HTTPS 解密**，并安装、完全信任 PopCat 根证书。模块仅把 `app.bilibili.com`、`grpc.biliapi.net`、`api.bilibili.com` 加入解密范围，不使用全域 `*` MITM。iOS 安装证书描述文件后，还要在「设置 → 通用 → 关于本机 → 证书信任设置」中手动打开完全信任。
+开屏页采用两层处理：
+- 请求阶段：对 `app.bilibili.com` 或 `app.biliapi.net` 的 `/x/v2/splash/list`，直接返回成功的空广告列表（`data.list=[]`），不向 Bilibili 请求广告素材。
+- 响应阶段兜底：如果请求脚本没有命中，JSON 脚本会清空 `data.list`，把 `max_time` 设为 0，并拉长 `min_interval` / `pull_interval`；品牌素材接口只清除默认展示项，不删除普通图片列表。
 
-在 PopCat 的「海外代理」模式下，所有启用模块都会生效；本模块不需要、也不应开启「全局模式下生效」。全局代理模式下只有手动打开该选项的模块才参与分流。HTTPS 解密对使用证书固定的 App 可能失败，解密脚本若报错可在 PopCat 连接日志中查看。
+模块还覆盖 app2smile 已登记的开屏 / 首页 JSON、gRPC 视频详情与动态接口。新版客户端可能使用 `app.biliapi.net`，已一并加入 MITM 与脚本匹配。
 
+**Bilibili 响应净化必须启用 PopCat 的 HTTPS 解密**，并安装、完全信任 PopCat 根证书。模块仅把 `app.bilibili.com`、`app.biliapi.net`、`grpc.biliapi.net`、`api.bilibili.com` 加入解密范围，不使用全域 `*` MITM。iOS 安装证书描述文件后，还要在「设置 → 通用 → 关于本机 → 证书信任设置」中手动打开完全信任。
+
+在 PopCat 的「海外代理」模式下，所有启用模块都会生效；本模块不需要、也不应开启「全局模式下生效」。全局代理模式下只有手动打开该选项的模块才参与分流。
+
+开屏素材若已被 Bilibili App 本地缓存，首次更新后可能仍显示旧素材。请更新模块后彻底退出 Bilibili，再打开测试；必要时清理 Bilibili 自身缓存。若仍出现新广告，需要从 PopCat 日志确认实际请求是否命中 `/x/v2/splash/list`，以及脚本日志是否出现 `[BiliSplash] returned an empty splash ad list`。
 ## 暂不自动转换的内容
 
 除已单独适配的 Bilibili 专项外，Quantumult X 的 `script-response-body`、`jsonjq-response-body`、脚本参数、MITM 相关配置不能直接等同于普通域名拦截规则，仍保留原始归档，等待逐项适配和实测。
