@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 from html.parser import HTMLParser
 from pathlib import Path
@@ -51,10 +52,15 @@ OBSOLETE_ALIAS_URLS = {"https://ddgksf2013.top/rewrite/BiliBiliAds.conf"}
 
 
 def fetch_text(url: str) -> str:
-    req = Request(url, headers={
+    headers = {
         "User-Agent": "749894867-adblock-center/1.0",
         "Accept": "application/vnd.github+json, text/plain, */*",
-    })
+    }
+    token = os.environ.get("GITHUB_TOKEN", "")
+    if token and "api.github.com" in url:
+        headers["Authorization"] = "Bearer " + token
+        headers["X-GitHub-Api-Version"] = "2022-11-28"
+    req = Request(url, headers=headers)
     with urlopen(req, timeout=45) as response:
         data = response.read(12_000_000 + 1)
     if len(data) > 12_000_000:
