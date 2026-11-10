@@ -6,6 +6,7 @@ JSON/script response rewrites are intentionally not copied into the output.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections import Counter
@@ -107,9 +108,66 @@ def iter_rule_lines(path: Path):
                 yield normalized
 
 
+
+def build_bilibili_scripts() -> list[dict[str, object]]:
+    """Publish the upstream app2smile Bilibili scripts on our stable Pages host.
+
+    Prefer the freshly synchronized upstream copies. Keep repository-local
+    vendor copies as a fail-safe when GitHub temporarily cannot serve a source.
+    """
+    upstream_root = SOURCE_ROOT / "app2smile" / "js"
+    vendor_root = ROOT / "scripts" / "vendor"
+    output_root = SITE / "scripts"
+    output_root.mkdir(parents=True, exist_ok=True)
+
+    rows: list[dict[str, object]] = []
+    for filename in ("bilibili-json.js", "bilibili-proto.js"):
+        upstream = upstream_root / filename
+        vendor = vendor_root / filename
+        source = upstream if upstream.is_file() and upstream.stat().st_size > 0 else vendor
+        if not source.is_file():
+            raise SystemExit(f"Missing Bilibili script and fallback: {filename}")
+
+        content = source.read_text(encoding="utf-8-sig")
+        if not content.strip():
+            raise SystemExit(f"Bilibili script is empty: {filename}")
+
+        # The upstream JSON script calls $done() but forgets to return when a
+        # response has no body. Continuing then throws after $done(), which
+        # invalidates the response in PopCat. Stop cleanly after the pass-through.
+        if filename == "bilibili-json.js":
+            needle = "    $done({});\n}\nif (method !== \"GET\")"
+            replacement = "    $done({});\n    return;\n}\nif (method !== \"GET\")"
+            if needle in content:
+                content = content.replace(needle, replacement, 1)
+
+        if "$done(" not in content:
+            raise SystemExit(f"Bilibili script has no $done() callback: {filename}")
+        if filename == "bilibili-proto.js" and "pako.ungzip" not in content:
+            raise SystemExit("Bilibili protobuf script is missing its gzip decoder")
+
+        encoded = content.encode("utf-8")
+        if len(encoded) > 2 * 1024 * 1024:
+            raise SystemExit(f"Bilibili script exceeds the 2 MiB safe size: {filename}")
+
+        target = output_root / filename
+        target.write_bytes(encoded)
+        rows.append({
+            "path": f"scripts/{filename}",
+            "url": f"https://749894867.github.io/adblock-center/scripts/{filename}",
+            "source": "app2smile/rules",
+            "source_path": f"js/{filename}",
+            "sha256": hashlib.sha256(encoded).hexdigest(),
+            "size_bytes": len(encoded),
+        })
+
+    return rows
+
 def main() -> None:
     if not SOURCE_ROOT.exists():
         raise SystemExit("site/sources is missing; run scripts/sync_sources.py first")
+
+    bilibili_scripts = build_bilibili_scripts()
 
     rules: set[str] = set()
     scanned_files = 0
@@ -262,22 +320,34 @@ def main() -> None:
     single_list_path.write_text(single_list_text, encoding="utf-8")
 
     module_lines = [
-        "#!name=墨鱼广告净化 · 每日自动更新",
-        "#!desc=固定 HTTPS 订阅入口；规则分片每日同步更新，无需重复导入。",
+        "#!name=墨鱼广告净化 · 海外代理模式",
+        "#!desc=海外代理模式下生效；含通用广告规则与 Bilibili 响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。",
         "#!category=AdBlock",
         "#",
         f"# Generated: {generated_at}",
         f"# Rules: {len(ordered_rules)}",
         f"# Remote rule shards: {len(shard_rows)}",
-        "# The module stays small; each external list contains only PopCat-supported domain rule types.",
-        "# Update this module in PopCat to download refreshed external rule lists.",
+        "# External lists contain PopCat-supported domain rule types only.",
+        "# Update this module in PopCat to refresh remote rule lists and Bilibili scripts.",
         "",
         "[Rule]",
     ]
     for shard in shard_rows:
-        module_lines.append(
-            f"RULE-SET,{shard['url']},REJECT"
-        )
+        module_lines.append(f"RULE-SET,{shard['url']},REJECT")
+
+    # These Bilibili-only URL rules are evaluated on decrypted requests.
+    # app.bilibili.com and grpc.biliapi.net are handled by the response scripts below.
+    module_lines.extend([
+        "DOMAIN-SUFFIX,cm.bilibili.com,REJECT",
+        "URL-REGEX,^https?:\\\\/\\\\/api\\\\.bilibili\\\\.com\\\\/x\\\\/v2\\\\/dm\\\\/ad,REJECT",
+        "",
+        "[MITM]",
+        "hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com",
+        "",
+        "[Script]",
+        f"bili_json = type=http-response,pattern=^https:\\\\/\\\\/app\\\\.bilibili\\\\.com\\\\/x\\\\/(v2\\\\/(splash\\\\/(list|show)|feed\\\\/index\\\\?)|resource\\\\/show\\\\/tab\\\\/v2),requires-body=1,timeout=25,script-path={bilibili_scripts[0]['url']}",
+        f"bili_proto = type=http-response,pattern=^https:\\\\/\\\\/(grpc\\\\.biliapi\\\\.net|app\\\\.bilibili\\\\.com)\\\\/bilibili\\\\.app\\\\.(viewunite\\\\.v1\\\\.View\\\\/View|dynamic\\\\.v2\\\\.Dynamic\\\\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path={bilibili_scripts[1]['url']}",
+    ])
     module_text = "\n".join(module_lines) + "\n"
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(module_text, encoding="utf-8")
@@ -297,6 +367,14 @@ def main() -> None:
         "size_bytes": single_list_bytes,
         "max_safe_bytes": single_list_limit,
         "format": "Surge/Shadowrocket RULE-SET text; policy is selected in the client",
+    }
+    manifest["bilibili"] = {
+        "supported": True,
+        "requires_https_decryption": True,
+        "mitm_hosts": ["app.bilibili.com", "grpc.biliapi.net", "api.bilibili.com"],
+        "scripts": bilibili_scripts,
+        "coverage": ["开屏页", "推荐页", "底部 Tab", "视频详情页", "动态/UP 主推荐", "弹幕广告接口"],
+        "note": "基于 app2smile/rules 的 Surge 模块与脚本适配 PopCat；需要用户安装并完全信任 HTTPS 解密证书。",
     }
     manifest["subscription"] = {
         "path": "downloads/AdBlock-Center.sgmodule",
@@ -319,6 +397,7 @@ def main() -> None:
 
     print(f"[BUILD] {OUTPUT.relative_to(ROOT)} ({output_bytes} bytes)")
     print(f"[BUILD] {len(ordered_rules)} unique rules in {len(shard_rows)} shards")
+    print(f"[BILIBILI] Published {len(bilibili_scripts)} scripts: " + ", ".join(x["path"] for x in bilibili_scripts))
     for shard in shard_rows:
         print(f"[SHARD] {shard['path']}: {shard['rule_count']} rules, {shard['size_bytes']} bytes")
     print("[BUILD] by type: " + json.dumps(dict(per_type), ensure_ascii=False, sort_keys=True))
