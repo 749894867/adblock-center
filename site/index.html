@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10151f">
+<title>墨鱼去广告规则中心 · AdBlock Center</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1018;--panel:#121b27;--panel2:#172332;--line:#263749;--text:#e8f0f7;--muted:#91a4b7;--cyan:#67d7d0;--blue:#8ab4ff;--amber:#f1c77a;--green:#8fdbac}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 500px at 85% -10%,#1b3b52 0,transparent 65%),var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1100px;margin:auto;padding:28px 20px 70px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:13px}.brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:700}.logo{width:34px;height:34px;border-radius:11px;background:linear-gradient(140deg,#69ded1,#3777bb);display:grid;place-items:center;color:#06141b;font-weight:900}
+.hero{padding:62px 0 34px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.08;letter-spacing:-.04em;margin:12px 0}.hero p{max-width:700px;color:var(--muted);font-size:17px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:10px;background:var(--cyan);color:#07171a;font-weight:750}.btn.alt{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 36px}.stat,.card{background:linear-gradient(160deg,var(--panel),#101823);border:1px solid var(--line);border-radius:16px;padding:18px}.stat strong{display:block;font-size:27px;line-height:1.2}.stat span{color:var(--muted);font-size:13px}
+section{margin-top:36px}h2{font-size:21px;margin:0 0 12px}h3{margin:0 0 6px;font-size:16px}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card p{color:var(--muted);margin:6px 0 10px}.pill{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:3px 9px;color:var(--muted);font-size:11px;margin:4px 4px 0 0}.pill.ok{color:var(--green);border-color:#285b45}.pill.warn{color:var(--amber);border-color:#6e5425}
+.download{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}.source-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.source-item{padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:#101a25}.source-item small{display:block;color:var(--muted)}
+input[type=search]{width:100%;padding:12px 14px;background:#0c141e;border:1px solid var(--line);border-radius:10px;color:var(--text);margin:8px 0 14px}.files{display:grid;gap:7px}.file{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:#111b28;border:1px solid var(--line);border-radius:9px;font-size:13px}.file small{color:var(--muted);white-space:nowrap}
+.notice{padding:15px 17px;border:1px solid #705728;background:#241e13;border-radius:12px;color:#ead8b5}.good{padding:15px 17px;border:1px solid #285b45;background:#10251d;border-radius:12px;color:#c8efda}
+footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.cards,.source-list{grid-template-columns:1fr}.hero{padding-top:44px}.top{align-items:flex-start;flex-direction:column}.file{flex-direction:column}}
+</style>
+</head>
+<body><main class="wrap">
+<div class="top"><div class="brand"><div class="logo">A</div> AdBlock Center <span class="pill">墨鱼规则中心</span></div><div>每日上游同步 · 独立 Apple Intelligence 分流</div></div>
+<header class="hero"><div class="eyebrow">OPEN SOURCE RULE HUB</div><h1>更全面的广告拦截，<br>持续更新。</h1><p>集中追踪通用广告规则、APP 专项配置和脚本依赖。原始资源完整归档，经过 PopCat 适配和实测的模块单独发布，Apple Intelligence 分流独立维护。</p>
+<div class="actions"><a class="btn" href="downloads/Apple-Intelligence-Route.sgmodule">下载 Apple Intelligence 分流</a><a class="btn alt" href="https://github.com/749894867/adblock-center">查看 GitHub 仓库</a></div></header>
+<div class="grid"><div class="stat"><strong id="fileCount">—</strong><span>已归档上游文件</span></div><div class="stat"><strong id="sourceCount">7</strong><span>上游项目</span></div><div class="stat"><strong id="appCount">20+</strong><span>专项配置覆盖目标</span></div><div class="stat"><strong id="lastSync">待同步</strong><span>最后检查时间</span></div></div>
+<div class="good"><b>Apple Intelligence 独立分流</b><br>使用单独规则文件，将指定 Apple Intelligence / Siri 主机交给策略组「默认」。请确认客户端存在同名策略组；此文件未配置 HTTPS MITM。</div>
+<section><h2>模块下载</h2><div class="cards">
+<div class="card"><div class="download"><div><h3>Apple Intelligence 优先分流</h3><span class="pill ok">独立规则文件</span><span class="pill warn">客户端待验证</span></div><a href="downloads/Apple-Intelligence-Route.sgmodule">下载 ↗</a></div><p>保留原有 11 个域名，并补充官方 Apple 服务主机。路由策略为「默认」。</p></div>
+<div class="card"><div class="download"><div><h3>综合广告规则</h3><span class="pill warn">迁移中</span></div><span class="muted">暂不发布未验证模块</span></div><p>通用规则与 APP 专项原始配置正在整理。QX 脚本和响应体修改不会直接冒充 PopCat 可用规则。</p></div>
+</div></section>
+<section><h2>上游规则来源</h2><p class="muted">每日从以下项目同步文件与版本信息。原始归档用于审查和迁移，不代表已通过 PopCat 兼容性验证。</p><div class="source-list" id="sources">
+<div class="source-item">ddgksf2013 / Rewrite<small>APP 专项配置</small></div><div class="source-item">ddgksf2013 / Scripts<small>脚本依赖</small></div><div class="source-item">Cats-Team / AdRules<small>通用广告规则</small></div><div class="source-item">AWAvenue<small>通用广告规则</small></div><div class="source-item">anti-AD<small>广告与隐私拦截</small></div><div class="source-item">Blackmatrix7<small>Advertising 规则</small></div><div class="source-item">app2smile / rules<small>APP 专项规则</small></div></div></section>
+<section><h2>上游文件归档</h2><p class="muted">可按文件名搜索已同步资源。点击文件可查看原始内容。</p><input id="search" type="search" placeholder="搜索规则或脚本，例如 WeiboAds、amap.js、Keep"><div id="fileList" class="files"><div class="muted">等待第一次同步……</div></div></section>
+<section><h2>兼容性与发布状态</h2><div class="cards">
+<div class="card"><h3>上游已同步</h3><p>已从原始仓库获取文件并记录 SHA256 与来源链接。</p></div>
+<div class="card"><h3>待转换</h3><p>保留 QX / Surge 原始配置，需逐条转换，不直接导入。</p></div>
+<div class="card"><h3>待实测</h3><p>完成语法适配后，还需在 PopCat、目标 APP 和 iOS 版本上验证。</p></div>
+<div class="card"><h3>PopCat 已验证</h3><p>只有真实设备验证通过后，才会标记为可用并进入正式下载。</p></div>
+</div></section>
+<section><div class="notice"><b>使用提醒：</b>极限拦截可能影响 APP 登录、搜索、定位、播放、支付或推荐功能。动态服务端广告、证书固定和视频流广告也无法保证全部拦截。请保留可回滚版本。</div></section>
+<footer>AdBlock Center · 自动更新以 GitHub Actions 实际运行结果为准。上游规则版权与署名归原作者所有。本项目仅做资源索引、审查、适配和个人配置整合。</footer>
+</main>
+<script>
+const $=s=>document.querySelector(s);let allFiles=[];
+fetch('data/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest not ready');return r.json()}).then(m=>{
+ allFiles=m.files||[];$('#fileCount').textContent=allFiles.length;$('#sourceCount').textContent=(m.sources||[]).length;
+ $('#lastSync').textContent=m.generated_at?new Date(m.generated_at).toLocaleDateString('zh-CN'):'待同步';
+ const host=$('#sources');host.innerHTML=(m.sources||[]).map(s=>'<div class="source-item"><a target="_blank" rel="noopener" href="https://github.com/'+s.repo+'">'+s.name+'</a><small>'+s.file_count+' 个文件 · '+(s.commit||'无提交信息').slice(0,10)+'</small></div>').join('')||host.innerHTML;
+ render('');
+}).catch(()=>{});
+function render(q){const list=allFiles.filter(f=>(f.path+' '+f.repo).toLowerCase().includes(q.toLowerCase())).slice(0,250);$('#fileList').innerHTML=list.length?list.map(f=>'<div class="file"><a href="'+f.site_path+'">'+f.path+'</a><small>'+f.repo+' · '+Math.round(f.bytes/1024)+' KB</small></div>').join(''):'<div class="muted">暂无匹配文件或尚未完成第一次同步。</div>'}
+$('#search').addEventListener('input',e=>render(e.target.value));
+</script></body></html>
