@@ -141,6 +141,30 @@ def build_bilibili_scripts() -> list[dict[str, object]]:
             if needle in content:
                 content = content.replace(needle, replacement, 1)
 
+            # The upstream 2023 splash branch only deletes data.show, while the
+            # documented /splash/list ad inventory is stored in data.list.
+            # Empty that list and suppress the next scheduled splash fetch.
+            splash_start = content.find('    if (url.includes("x/v2/splash")) {')
+            splash_end = content.find(' else if (url.includes("resource/show/tab/v2")) {', splash_start)
+            if splash_start < 0 or splash_end < 0:
+                raise SystemExit("Could not locate the upstream Bilibili splash branch")
+            splash_block = """    if (url.includes("x/v2/splash/list")) {
+        const splash = body.data;
+        if (Array.isArray(splash.list)) splash.list = [];
+        if (Array.isArray(splash.keep_ids)) splash.keep_ids = [];
+        if (typeof splash.max_time === "number") splash.max_time = 0;
+        if (typeof splash.min_interval === "number") splash.min_interval = 31536000;
+        if (typeof splash.pull_interval === "number") splash.pull_interval = 31536000;
+        console.log("已清空开屏广告列表");
+    } else if (url.includes("x/v2/splash/brand/list")) {
+        if (Array.isArray(body.data.show)) body.data.show = [];
+        console.log("已清除开屏品牌图默认展示项");
+    } else if (url.includes("x/v2/splash")) {
+        if (Array.isArray(body.data.show)) body.data.show = [];
+        console.log("已清除开屏展示项");
+    }"""
+            content = content[:splash_start] + splash_block + content[splash_end:]
+
         if "$done(" not in content:
             raise SystemExit(f"Bilibili script has no $done() callback: {filename}")
         if filename == "bilibili-proto.js" and "pako.ungzip" not in content:
@@ -160,6 +184,28 @@ def build_bilibili_scripts() -> list[dict[str, object]]:
             "sha256": hashlib.sha256(encoded).hexdigest(),
             "size_bytes": len(encoded),
         })
+
+    # A request-stage empty response is more reliable for the splash list than
+    # response-body editing: the server never supplies an ad creative to cache.
+    filename = "bilibili-splash.js"
+    source = vendor_root / filename
+    if not source.is_file():
+        raise SystemExit(f"Missing Bilibili splash script: {filename}")
+    splash_content = source.read_text(encoding="utf-8-sig")
+    if "$done(" not in splash_content or "list: []" not in splash_content:
+        raise SystemExit("Bilibili splash script failed structural validation")
+    splash_encoded = splash_content.encode("utf-8")
+    if len(splash_encoded) > 64 * 1024:
+        raise SystemExit("Bilibili splash script exceeds the 64 KiB safety limit")
+    (output_root / filename).write_bytes(splash_encoded)
+    rows.append({
+        "path": f"scripts/{filename}",
+        "url": f"https://749894867.github.io/adblock-center/scripts/{filename}",
+        "source": "local PopCat adaptation",
+        "source_path": "scripts/vendor/bilibili-splash.js",
+        "sha256": hashlib.sha256(splash_encoded).hexdigest(),
+        "size_bytes": len(splash_encoded),
+    })
 
     return rows
 
@@ -321,32 +367,31 @@ def main() -> None:
 
     module_lines = [
         "#!name=墨鱼广告净化 · 海外代理模式",
-        "#!desc=海外代理模式下生效；含通用广告规则与 Bilibili 响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。",
+        "#!desc=海外代理模式下生效；包含通用广告规则与 Bilibili 开屏、首页及视频响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。",
         "#!category=AdBlock",
         "#",
         f"# Generated: {generated_at}",
         f"# Rules: {len(ordered_rules)}",
         f"# Remote rule shards: {len(shard_rows)}",
         "# External lists contain PopCat-supported domain rule types only.",
-        "# Update this module in PopCat to refresh remote rule lists and Bilibili scripts.",
+        "# Update this module in PopCat to refresh remote rule lists and scripts.",
         "",
         "[Rule]",
     ]
     for shard in shard_rows:
         module_lines.append(f"RULE-SET,{shard['url']},REJECT")
 
-    # These Bilibili-only URL rules are evaluated on decrypted requests.
-    # app.bilibili.com and grpc.biliapi.net are handled by the response scripts below.
     module_lines.extend([
         "DOMAIN-SUFFIX,cm.bilibili.com,REJECT",
         r"URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/ad,REJECT",
         "",
         "[MITM]",
-        "hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com",
+        "hostname = %APPEND% app.bilibili.com, app.biliapi.net, grpc.biliapi.net, api.bilibili.com",
         "",
         "[Script]",
-        rf"bili_json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2),requires-body=1,timeout=25,script-path={bilibili_scripts[0]['url']}",
-        rf"bili_proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path={bilibili_scripts[1]['url']}",
+        rf"bili_splash = type=http-request,pattern=^https:\/\/(app\.bilibili\.com|app\.biliapi\.net)(?::443)?\/x\/v2\/splash\/list(?:\?[^#]*)?$,timeout=10,script-path={bilibili_scripts[2]['url']}",
+        rf"bili_json = type=http-response,pattern=^https:\/\/(app\.bilibili\.com|app\.biliapi\.net)\/x\/(v2\/(splash\/(list|show|event\/list2|brand\/list)|feed\/index\?)|resource\/show\/tab\/v2),requires-body=1,timeout=25,script-path={bilibili_scripts[0]['url']}",
+        rf"bili_proto = type=http-response,pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com|app\.biliapi\.net)\/bilibili\.app\.(viewunite\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$,requires-body=1,binary-body-mode=1,timeout=30,script-path={bilibili_scripts[1]['url']}",
     ])
     module_text = "\n".join(module_lines) + "\n"
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -371,9 +416,9 @@ def main() -> None:
     manifest["bilibili"] = {
         "supported": True,
         "requires_https_decryption": True,
-        "mitm_hosts": ["app.bilibili.com", "grpc.biliapi.net", "api.bilibili.com"],
+        "mitm_hosts": ["app.bilibili.com", "app.biliapi.net", "grpc.biliapi.net", "api.bilibili.com"],
         "scripts": bilibili_scripts,
-        "coverage": ["开屏页", "推荐页", "底部 Tab", "视频详情页", "动态/UP 主推荐", "弹幕广告接口"],
+        "coverage": ["开屏广告请求本地空响应与响应兜底", "开屏品牌默认展示项", "推荐页", "底部 Tab", "视频详情页", "动态/UP 主推荐", "弹幕广告接口"],
         "note": "基于 app2smile/rules 的 Surge 模块与脚本适配 PopCat；需要用户安装并完全信任 HTTPS 解密证书。",
     }
     manifest["subscription"] = {
