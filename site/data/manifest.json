@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T07:02:30+00:00",
+  "generated_at": "2026-11-10T07:03:23+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -1096,7 +1096,7 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-10T07:02:32+00:00",
+    "generated_at": "2026-11-10T07:03:26+00:00",
     "rule_count": 223482,
     "size_bytes": 7723883,
     "max_safe_bytes": 8000000,
@@ -1151,7 +1151,7 @@
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-10T07:02:32+00:00",
+    "generated_at": "2026-11-10T07:03:26+00:00",
     "rule_count": 223482,
     "size_bytes": 2793,
     "shard_count": 16,
@@ -1273,7 +1273,7 @@
     "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   },
   "apple_intelligence": {
-    "generated_at": "2026-11-10T07:02:32+00:00",
+    "generated_at": "2026-11-10T07:03:27+00:00",
     "source_url": "https://support.apple.com/en-us/101555",
     "source_mode": "live",
     "policy_group": "默认",
