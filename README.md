@@ -22,10 +22,6 @@
 
 同步成功不代表兼容性通过。
 
-## 公开页面
-
-GitHub Pages URL（仓库改名并启用 Pages 后）：
-`https://749894867.github.io/adblock-center/`
 
 ## 本地目录
 
