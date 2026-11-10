@@ -2,13 +2,26 @@
 #!desc=固定 HTTPS 订阅入口；规则分片每日同步更新，无需重复导入。
 #!category=AdBlock
 #
-# Generated: 2026-11-10T06:01:51+00:00
-# Rules: 223591
-# Remote rule shards: 4
-# The module stays small; each referenced RULE-SET is a separate plain-text list.
+# Generated: 2026-11-10T06:14:32+00:00
+# Rules: 223480
+# Remote rule shards: 16
+# The module stays small; each external list contains only PopCat-supported domain rule types.
+# Update this module in PopCat to download refreshed external rule lists.
 
 [Rule]
-RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-01.list,REJECT,update-interval=86400
-RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-02.list,REJECT,update-interval=86400
-RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-03.list,REJECT,update-interval=86400
-RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-04.list,REJECT,update-interval=86400
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-01.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-02.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-03.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-04.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-05.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-06.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-07.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-08.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-09.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-10.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-11.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-12.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-13.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-14.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-15.list,REJECT
+RULE-SET,https://749894867.github.io/adblock-center/rules/AdBlock-16.list,REJECT
