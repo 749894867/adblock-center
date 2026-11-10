@@ -31,7 +31,7 @@ SOURCES = [
     {"id":"awavenue","name":"AWAvenue","repo":"TG-Twilight/AWAvenue-Ads-Rule","branch":"main","exact":["Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"],"category":"通用广告规则"},
     {"id":"anti-ad","name":"anti-AD","repo":"privacy-protection-tools/anti-AD","branch":"master","exact":["anti-ad-surge.txt"],"category":"广告与隐私规则"},
     {"id":"blackmatrix7","name":"Blackmatrix7 Advertising","repo":"blackmatrix7/ios_rule_script","branch":"master","exact":["rule/Surge/Advertising/Advertising.list"],"category":"通用广告规则"},
-    {"id":"app2smile","name":"app2smile rules","repo":"app2smile/rules","branch":"master","prefixes":["module/"],"extensions":[".conf",".sgmodule",".snippet",".list"],"category":"APP 专项规则"},
+    {"id":"app2smile","name":"app2smile rules","repo":"app2smile/rules","branch":"master","prefixes":["module/"],"extensions":[".conf",".sgmodule",".snippet",".list",".js",".json",".txt"],"category":"APP 专项规则"},
 ]
 
 def request_bytes(url: str) -> bytes:
