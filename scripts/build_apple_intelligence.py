@@ -47,8 +47,8 @@ COMPATIBILITY_HOSTS = {
 }
 
 HOST_RE = re.compile(
-    r"(?<![A-Za-z0-9*.-])(?:\\*\\.)?"
-    r"(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+"
+    r"(?<![A-Za-z0-9*.-])(?:\*\.)?"
+    r"(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+"
     r"[A-Za-z]{2,}(?![A-Za-z0-9.-])"
 )
 
@@ -87,7 +87,7 @@ def extract_official_hosts(html: str) -> set[str]:
     text = " ".join(parser.parts)
 
     heading = re.search(
-        r"Apple\\s+Intelligence,\\s*Siri,\\s*and\\s*Search",
+        r"Apple\s+Intelligence,\s*Siri,\s*and\s*Search",
         text,
         flags=re.IGNORECASE,
     )
@@ -110,8 +110,6 @@ def extract_official_hosts(html: str) -> set[str]:
         match.group(0).lower().rstrip(".")
         for match in HOST_RE.finditer(section)
     }
-    # Keep only the host entries in the official table, not URLs from unrelated
-    # page navigation or text outside the Apple Intelligence section.
     hosts = {
         host for host in hosts
         if "." in host.lstrip("*.") and not host.endswith(".html")
@@ -142,7 +140,7 @@ def to_rule(host: str) -> str:
 
 
 def main() -> None:
-    if not POLICY_GROUP or "," in POLICY_GROUP or "\\n" in POLICY_GROUP:
+    if not POLICY_GROUP or "," in POLICY_GROUP or "\n" in POLICY_GROUP:
         raise SystemExit("APPLE_INTELLIGENCE_POLICY must be a non-empty policy name without commas/newlines")
 
     official_hosts, source_mode = load_hosts()
@@ -168,7 +166,7 @@ def main() -> None:
         "",
         "# 不配置 [MITM]：Apple 官方建议不要对这些加密连接进行 HTTPS 内容检查。",
     ]
-    content = "\\n".join(module) + "\\n"
+    content = "\n".join(module) + "\n"
     encoded_size = len(content.encode("utf-8"))
     if encoded_size > 4 * 1024 * 1024:
         raise SystemExit(
@@ -199,7 +197,7 @@ def main() -> None:
     }
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n",
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
