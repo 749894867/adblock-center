@@ -2,7 +2,7 @@
 #!desc=海外代理模式下生效；包含通用广告规则与 Bilibili 开屏、首页及视频响应净化。Bilibili 需要开启 HTTPS 解密并信任证书。
 #!category=AdBlock
 #
-# Generated: 2026-11-10T07:53:06+00:00
+# Generated: 2026-11-10T07:54:28+00:00
 # Rules: 223482
 # Remote rule shards: 16
 # External lists contain PopCat-supported domain rule types only.
