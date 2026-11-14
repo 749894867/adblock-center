@@ -2,7 +2,11 @@
 DOMAIN,118.89.204.198
 DOMAIN,180.76.76.200
 DOMAIN,a0.app.xiaomi.com
+DOMAIN,ads-vp5.xhscdn.com
 DOMAIN,api.statsig.com
+DOMAIN,lf-event-manager.oceanengine.com
+DOMAIN,shihuo-new.log.shihuocdn.cn
+DOMAIN,shihuo.log.shihuocdn.cn
 DOMAIN,tagtic.cn
 DOMAIN-SUFFIX,0.avmarket.rs
 DOMAIN-SUFFIX,0.myikas.com
@@ -1866,11 +1870,13 @@ DOMAIN-SUFFIX,2xi988xu22.com
 DOMAIN-SUFFIX,2xmzazd.cn
 DOMAIN-SUFFIX,2xx63f0bfy.com
 DOMAIN-SUFFIX,2y2lttjs.hair
+DOMAIN-SUFFIX,2yh6rubr2nwkyyrx.cfd
 DOMAIN-SUFFIX,2ykz4plj.xyz
 DOMAIN-SUFFIX,2ypqjxnzo.com
 DOMAIN-SUFFIX,2yqcaqbfnv.nextgen.shareablee.com
 DOMAIN-SUFFIX,2yt.cn
 DOMAIN-SUFFIX,2ytoxb1r7.com
+DOMAIN-SUFFIX,2z3tbggtfbqnnko7pf7cuehwz64o.rest
 DOMAIN-SUFFIX,2znolon4vv2i1e1vm1v6cfup29euej.cfd
 DOMAIN-SUFFIX,2znp09oa.com
 DOMAIN-SUFFIX,2ztav5r7r.com
@@ -2225,6 +2231,7 @@ DOMAIN-SUFFIX,3hx1ui2vt.com
 DOMAIN-SUFFIX,3i1lkzrgvb5w53k.z9ky5o9j4o3b1j151x7.cyou
 DOMAIN-SUFFIX,3i22axdek.com
 DOMAIN-SUFFIX,3i2i.com
+DOMAIN-SUFFIX,3i3ijrkw2wwgteu9fn4kzew9zx.rest
 DOMAIN-SUFFIX,3i512v8o.xyz
 DOMAIN-SUFFIX,3i9i83eleqz.ojrbibibynq66y58k4h4on9.cyou
 DOMAIN-SUFFIX,3ie0h3b.com
@@ -2482,6 +2489,7 @@ DOMAIN-SUFFIX,467.red
 DOMAIN-SUFFIX,467d66fae3.a9684972c2.com
 DOMAIN-SUFFIX,468923686d.com
 DOMAIN-SUFFIX,4690y10pvpq8.com
+DOMAIN-SUFFIX,46hvznit8znh9kot2u8k3x.cfd
 DOMAIN-SUFFIX,46q8oxohlt.com
 DOMAIN-SUFFIX,46rtpw.ru
 DOMAIN-SUFFIX,46y7erj0mw.com
@@ -2576,6 +2584,7 @@ DOMAIN-SUFFIX,4eclient.com
 DOMAIN-SUFFIX,4ef55c331f.6dca8ddc4d.com
 DOMAIN-SUFFIX,4ef8c1bbed.223001ca2c.com
 DOMAIN-SUFFIX,4etsr.xyz
+DOMAIN-SUFFIX,4eyo3lx3bg6xcjk.rest
 DOMAIN-SUFFIX,4f2sm1y1ss.com
 DOMAIN-SUFFIX,4f8g9foqwy.com
 DOMAIN-SUFFIX,4fc2d0c0e2.abb030d6a7.com
@@ -2618,6 +2627,7 @@ DOMAIN-SUFFIX,4lqs5j3ckn.com
 DOMAIN-SUFFIX,4lu114x7k9ef6qr82.cfd
 DOMAIN-SUFFIX,4m0tg6axs.com
 DOMAIN-SUFFIX,4mads.com
+DOMAIN-SUFFIX,4mhzgizyw28rfr.cfd
 DOMAIN-SUFFIX,4mp.xewp5et8izo2eq.cyou
 DOMAIN-SUFFIX,4mvkxs0o0.com
 DOMAIN-SUFFIX,4mwe9ki9r.com
@@ -3794,6 +3804,7 @@ DOMAIN-SUFFIX,7mx.eider.com
 DOMAIN-SUFFIX,7mx.eidershop.com
 DOMAIN-SUFFIX,7mx63ygcti.com
 DOMAIN-SUFFIX,7mxn77h4vr.com
+DOMAIN-SUFFIX,7n6to81ifm25yzq53f9.rest
 DOMAIN-SUFFIX,7na721c64.com
 DOMAIN-SUFFIX,7nb71ub2xi.com
 DOMAIN-SUFFIX,7nbebz9jo87v13nn3zexy52h1vc9.cfd
@@ -4101,6 +4112,7 @@ DOMAIN-SUFFIX,8inhjmd.usefathom.com
 DOMAIN-SUFFIX,8j1f0af5.de
 DOMAIN-SUFFIX,8j7tu8vtxx.com
 DOMAIN-SUFFIX,8jfbt5va3r.com
+DOMAIN-SUFFIX,8jftmxewqw72jnu.rest
 DOMAIN-SUFFIX,8jkx.com
 DOMAIN-SUFFIX,8jq86f.557lhrqr422uvcx9.cyou
 DOMAIN-SUFFIX,8jzw.com
@@ -4295,6 +4307,7 @@ DOMAIN-SUFFIX,9544702.kazooby.com
 DOMAIN-SUFFIX,95558000.com
 DOMAIN-SUFFIX,9565365.com
 DOMAIN-SUFFIX,9566180.com
+DOMAIN-SUFFIX,9582004f6b.com
 DOMAIN-SUFFIX,959fffdae3.com
 DOMAIN-SUFFIX,95bfbe548450b30c.clicknplay.to
 DOMAIN-SUFFIX,95d684gnf.com
@@ -12470,6 +12483,7 @@ DOMAIN-SUFFIX,aegs.joinvoy.pl
 DOMAIN-SUFFIX,aehel.drmartens.com
 DOMAIN-SUFFIX,aehjiuheifpop.online
 DOMAIN-SUFFIX,aehqk.tushbaby.com
+DOMAIN-SUFFIX,aehtinscsktda.space
 DOMAIN-SUFFIX,aehudh.rakumachi.jp
 DOMAIN-SUFFIX,aehvf.tentree.com
 DOMAIN-SUFFIX,aeibnv.golfino.com
@@ -13780,6 +13794,7 @@ DOMAIN-SUFFIX,aisvhv.fanaticwrestling.com
 DOMAIN-SUFFIX,aitdi.serenityranchrecovery.com
 DOMAIN-SUFFIX,aitlewqvasxut.online
 DOMAIN-SUFFIX,aitrejydphpbl.website
+DOMAIN-SUFFIX,aiukjrpgxwiqh.website
 DOMAIN-SUFFIX,aivalabs.com
 DOMAIN-SUFFIX,aivali.openapp.link
 DOMAIN-SUFFIX,aivento.cn
@@ -15344,6 +15359,7 @@ DOMAIN-SUFFIX,analytics.alrajhibank.com.sa
 DOMAIN-SUFFIX,analytics.alriyfalnajdiu.com
 DOMAIN-SUFFIX,analytics.alshamasy.com
 DOMAIN-SUFFIX,analytics.altabeeb.com.sa
+DOMAIN-SUFFIX,analytics.alvarezrosa.com
 DOMAIN-SUFFIX,analytics.alvinchang.dev
 DOMAIN-SUFFIX,analytics.amakings.com
 DOMAIN-SUFFIX,analytics.amazing-media.com
@@ -15448,19 +15464,3 @@ DOMAIN-SUFFIX,analytics.biscottigentilini.it
 DOMAIN-SUFFIX,analytics.bitchute.com
 DOMAIN-SUFFIX,analytics.bitrix.info
 DOMAIN-SUFFIX,analytics.bitslab.com.au
-DOMAIN-SUFFIX,analytics.bkav.com
-DOMAIN-SUFFIX,analytics.bkav.com.vn
-DOMAIN-SUFFIX,analytics.blackboard.com
-DOMAIN-SUFFIX,analytics.blaerlaw.com
-DOMAIN-SUFFIX,analytics.bleacherreport.com
-DOMAIN-SUFFIX,analytics.bleanlab.fr
-DOMAIN-SUFFIX,analytics.blender.org
-DOMAIN-SUFFIX,analytics.blg.nz
-DOMAIN-SUFFIX,analytics.bloomberg.com
-DOMAIN-SUFFIX,analytics.blue
-DOMAIN-SUFFIX,analytics.blurb.cam
-DOMAIN-SUFFIX,analytics.bnome.com
-DOMAIN-SUFFIX,analytics.boevcapital.com
-DOMAIN-SUFFIX,analytics.boing.es
-DOMAIN-SUFFIX,analytics.bolavip.com
-DOMAIN-SUFFIX,analytics.bomiv.com
