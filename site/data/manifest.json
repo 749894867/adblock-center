@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T02:08:30+00:00",
+  "generated_at": "2026-11-19T01:44:21+00:00",
   "sources": [
     {
       "id": "ddgksf2013-rewrite",
@@ -16,7 +16,7 @@
       "name": "Cats-Team AdRules",
       "repo": "Cats-Team/AdRules",
       "branch": "main",
-      "commit": "3cc372b5dd0150e45b1957692126214e71accc63",
+      "commit": "85924b1fd410bdbe7fdf9662466ebb5217d40da1",
       "file_count": 1,
       "tree_truncated": false,
       "errors": []
@@ -79,8 +79,8 @@
       "path": "adrules-surge.conf",
       "site_path": "sources/cats-team/adrules-surge.conf",
       "source_url": "https://github.com/Cats-Team/AdRules/blob/main/adrules-surge.conf",
-      "bytes": 7396433,
-      "sha256": "6ce560548a4c708bfb8903984b767854e8e7d745397589a5f49045dc92ffbbaa"
+      "bytes": 7408848,
+      "sha256": "8934cc179945ac0f8667c7b8bd53d3dfd26a488a001148b79c2e6d58fbf96eae"
     },
     {
       "repo": "TG-Twilight/AWAvenue-Ads-Rule",
@@ -1096,9 +1096,9 @@
   "single_rule_set": {
     "path": "rules/AdBlock-Center.list",
     "url": "https://749894867.github.io/adblock-center/rules/AdBlock-Center.list",
-    "generated_at": "2026-11-18T02:08:32+00:00",
-    "rule_count": 223982,
-    "size_bytes": 7742085,
+    "generated_at": "2026-11-19T01:44:23+00:00",
+    "rule_count": 224353,
+    "size_bytes": 7754533,
     "max_safe_bytes": 8000000,
     "format": "Surge/Shadowrocket RULE-SET text; policy is selected in the client"
   },
@@ -1151,107 +1151,107 @@
   "subscription": {
     "path": "downloads/AdBlock-Center.sgmodule",
     "url": "https://749894867.github.io/adblock-center/downloads/AdBlock-Center.sgmodule",
-    "generated_at": "2026-11-18T02:08:32+00:00",
-    "rule_count": 223982,
+    "generated_at": "2026-11-19T01:44:23+00:00",
+    "rule_count": 224353,
     "size_bytes": 2793,
     "shard_count": 16,
-    "largest_shard_bytes": 500057,
+    "largest_shard_bytes": 500058,
     "shards": [
       {
         "path": "rules/AdBlock-01.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-01.list",
-        "rule_count": 15442,
-        "size_bytes": 500050
+        "rule_count": 15445,
+        "size_bytes": 500025
       },
       {
         "path": "rules/AdBlock-02.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-02.list",
-        "rule_count": 14695,
-        "size_bytes": 500030
+        "rule_count": 14690,
+        "size_bytes": 500057
       },
       {
         "path": "rules/AdBlock-03.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-03.list",
-        "rule_count": 13992,
-        "size_bytes": 500044
+        "rule_count": 14008,
+        "size_bytes": 500030
       },
       {
         "path": "rules/AdBlock-04.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-04.list",
-        "rule_count": 14086,
-        "size_bytes": 500056
+        "rule_count": 14072,
+        "size_bytes": 500033
       },
       {
         "path": "rules/AdBlock-05.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-05.list",
-        "rule_count": 14788,
+        "rule_count": 14793,
         "size_bytes": 500052
       },
       {
         "path": "rules/AdBlock-06.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-06.list",
-        "rule_count": 14328,
-        "size_bytes": 500057
+        "rule_count": 14331,
+        "size_bytes": 500035
       },
       {
         "path": "rules/AdBlock-07.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-07.list",
-        "rule_count": 14459,
-        "size_bytes": 500015
+        "rule_count": 14487,
+        "size_bytes": 500041
       },
       {
         "path": "rules/AdBlock-08.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-08.list",
-        "rule_count": 13710,
-        "size_bytes": 500049
+        "rule_count": 13676,
+        "size_bytes": 500046
       },
       {
         "path": "rules/AdBlock-09.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-09.list",
-        "rule_count": 14749,
-        "size_bytes": 500056
+        "rule_count": 14738,
+        "size_bytes": 500058
       },
       {
         "path": "rules/AdBlock-10.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-10.list",
-        "rule_count": 14913,
-        "size_bytes": 500052
+        "rule_count": 14920,
+        "size_bytes": 500032
       },
       {
         "path": "rules/AdBlock-11.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-11.list",
-        "rule_count": 13916,
-        "size_bytes": 500034
+        "rule_count": 13914,
+        "size_bytes": 500044
       },
       {
         "path": "rules/AdBlock-12.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-12.list",
-        "rule_count": 14131,
-        "size_bytes": 500031
+        "rule_count": 14137,
+        "size_bytes": 500029
       },
       {
         "path": "rules/AdBlock-13.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-13.list",
-        "rule_count": 14028,
-        "size_bytes": 500045
+        "rule_count": 14029,
+        "size_bytes": 500041
       },
       {
         "path": "rules/AdBlock-14.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-14.list",
-        "rule_count": 14384,
+        "rule_count": 14374,
         "size_bytes": 500045
       },
       {
         "path": "rules/AdBlock-15.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-15.list",
-        "rule_count": 15039,
-        "size_bytes": 500037
+        "rule_count": 15023,
+        "size_bytes": 500040
       },
       {
         "path": "rules/AdBlock-16.list",
         "url": "https://749894867.github.io/adblock-center/rules/AdBlock-16.list",
-        "rule_count": 7322,
-        "size_bytes": 242302
+        "rule_count": 7716,
+        "size_bytes": 254795
       }
     ],
     "redundant_suffix_rules_removed": 3043,
@@ -1259,7 +1259,7 @@
     "source_files_scanned": 76,
     "files_contributing_rules": 6,
     "rule_types": {
-      "DOMAIN-SUFFIX": 223695,
+      "DOMAIN-SUFFIX": 224066,
       "DOMAIN-KEYWORD": 282,
       "DOMAIN": 5
     },
@@ -1267,13 +1267,13 @@
       "anti-ad": 101832,
       "awavenue": 973,
       "blackmatrix7": 278,
-      "cats-team": 124906,
+      "cats-team": 125277,
       "dependencies": 2
     },
     "compatibility_note": "Stable compact module references external Surge-style RULE-SET shards. QX script-response-body and jsonjq-response-body rewrites are not included."
   },
   "apple_intelligence": {
-    "generated_at": "2026-11-18T02:08:33+00:00",
+    "generated_at": "2026-11-19T01:44:24+00:00",
     "source_url": "https://support.apple.com/en-us/101555",
     "source_mode": "live",
     "policy_group": "默认",
